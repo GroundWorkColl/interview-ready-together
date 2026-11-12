@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interview Ready Parent Roadmap</title>
+<meta name="description" content="A parent roadmap for supporting a young adult's job interview while keeping them in the lead. Wired to Work: Your Brain, Your Path.">
+<script>if(/[?&]embed=1/.test(location.search)){document.documentElement.classList.add("embed");window.__embed=1;window.scrollTo=function(){try{parent.postMessage({gwcScroll:1},"*")}catch(e){}};}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@500;600;700&display=swap">
+<style>html{color-scheme:light dark}body{margin:0;background:#F6F8FB;font-family:"Atkinson Hyperlegible",Arial,sans-serif}@media (prefers-color-scheme:dark){body{background:#0E1727}}</style>
+<style>
+/* Parent companion to the Interview Ready Roadmap. Same calm single column and brand header band. Support ladder chips darken as support gets more hands on. */
+#irp-app{
+  --irp-navy:#1C3557; --irp-solid:#1C3557; --irp-banner:#1C3557; --irp-fg:#26303F;
+  --irp-blue:#1F5E99; --irp-blue-mid:#2E75B6; --irp-accent:#00838F; --irp-teal:#00838F; --irp-teal-deep:#00838F;
+  --irp-light1:#9CCECE; --irp-light2:#8FB2D6; --irp-light3:#BFE6E9;
+  --irp-pink:#E87722;
+  --irp-tint:#E0F4F5; --irp-paper:#FFFFFF; --irp-line:#CFD7E2; --irp-muted:#5B6676;
+  --irp-display:"Lexend", "Segoe UI", Arial, sans-serif;
+  --irp-body:"Atkinson Hyperlegible", "Segoe UI", Arial, sans-serif;
+  font-family:var(--irp-body); font-size:17px; line-height:1.5; color:var(--irp-fg);
+  margin:0; box-sizing:border-box;
+}
+@media (prefers-color-scheme:dark){
+  #irp-app{
+    --irp-fg:#E6ECF5; --irp-solid:#00838F; --irp-banner:#14233B; --irp-blue:#7DB8EE; --irp-blue-mid:#4C95D6; --irp-accent:#35B7C3;
+    --irp-light1:#2B5560; --irp-light2:#3A5578; --irp-light3:#1F4A52; --irp-pink:#F29A55;
+    --irp-tint:#12343B; --irp-paper:#16233A; --irp-line:#2B3C57; --irp-muted:#9FB0C6;
+  }
+}
+#irp-app *, #irp-app *::before, #irp-app *::after{box-sizing:border-box;}
+#irp-app h1,#irp-app h2,#irp-app h3,#irp-app p,#irp-app ol,#irp-app ul,#irp-app fieldset,#irp-app legend{margin:0;padding:0;border:0;}
+#irp-app h1,#irp-app h2,#irp-app h3{font-family:var(--irp-display);color:var(--irp-fg);text-wrap:balance;line-height:1.2;}
+#irp-app button{font:inherit;cursor:pointer;}
+#irp-app [hidden]{display:none!important;}
+#irp-app :focus-visible{outline:3px solid var(--irp-blue-mid);outline-offset:2px;}
+#irp-app .irp-pad{padding-left:max(16px, env(safe-area-inset-left, 0px), calc((100% - 760px) / 2));padding-right:max(16px, env(safe-area-inset-right, 0px), calc((100% - 760px) / 2));}
+
+#irp-app .irp-head{background:var(--irp-banner);color:#fff;padding-block:28px 24px;border-bottom:4px solid var(--irp-teal);display:flex;gap:20px;align-items:center;justify-content:space-between;}
+#irp-app .irp-head h1{color:#fff;font-size:clamp(26px,6vw,36px);font-weight:700;line-height:1.15;}
+#irp-app .irp-head .irp-sub{margin-top:6px;color:#C5D6E8;}
+#irp-app .irp-head .irp-tag{font-size:15px;margin-top:4px;color:#C5D6E8;}
+#irp-app .irp-star{flex:none;width:76px;height:76px;}
+@media (max-width:520px){#irp-app .irp-star{width:56px;height:56px;}}
+
+#irp-app .irp-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding-block:16px;background:var(--irp-tint);border-bottom:1px solid var(--irp-line);}
+#irp-app .irp-stepbtn{display:flex;align-items:center;gap:8px;background:var(--irp-paper);border:1.5px solid var(--irp-line);border-radius:10px;padding:9px 10px;color:var(--irp-blue);text-align:left;min-width:0;}
+#irp-app .irp-stepbtn .n{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--irp-tint);color:var(--irp-blue);font-family:var(--irp-display);font-weight:600;font-size:14px;}
+#irp-app .irp-stepbtn .t{font-size:14px;line-height:1.2;font-weight:700;min-width:0;}
+#irp-app .irp-stepbtn[aria-current="step"]{border-color:var(--irp-fg);background:var(--irp-solid);color:#fff;}
+#irp-app .irp-stepbtn[aria-current="step"] .n{background:rgba(255,255,255,.22);color:#fff;}
+#irp-app .irp-stepbtn.done .n{background:var(--irp-teal);color:#fff;}
+@media (max-width:480px){#irp-app .irp-stepbtn{flex-direction:column;align-items:flex-start;gap:4px;padding:8px;} #irp-app .irp-stepbtn .t{font-size:13px;}}
+
+#irp-app .irp-body{padding-block:28px 40px;display:grid;gap:22px;}
+#irp-app .irp-body > section{display:grid;gap:22px;}
+#irp-app h2{font-size:24px;font-weight:600;}
+#irp-app .irp-lede{color:var(--irp-muted);}
+
+#irp-app .irp-who{display:grid;grid-template-columns:1.2fr 1.2fr 1fr;gap:12px;}
+@media (max-width:560px){#irp-app .irp-who{grid-template-columns:1fr;}}
+#irp-app .irp-field{display:grid;gap:4px;min-width:0;}
+#irp-app .irp-field label{font-weight:700;font-size:14px;color:var(--irp-blue);}
+#irp-app .irp-field label.big{font-family:var(--irp-display);font-size:18px;color:var(--irp-fg);font-weight:600;}
+#irp-app input[type=text],#irp-app input[type=date],#irp-app textarea{
+  width:100%;font:inherit;font-size:17px;color:var(--irp-fg);background:var(--irp-paper);
+  border:2px solid var(--irp-blue-mid);border-radius:10px;padding:10px 12px;margin:0;min-height:46px;
+}
+#irp-app textarea{min-height:90px;resize:vertical;}
+
+#irp-app .irp-callout{background:var(--irp-tint);border-left:5px solid var(--irp-teal);border-radius:8px;padding:14px 16px;}
+#irp-app .irp-callout strong{color:var(--irp-fg);}
+
+#irp-app fieldset.irp-q{display:grid;gap:10px;min-width:0;}
+#irp-app .irp-q legend,#irp-app .irp-qhead{display:flex;gap:12px;align-items:flex-start;font-family:var(--irp-display);font-weight:600;font-size:19px;margin-bottom:10px;line-height:1.3;color:var(--irp-fg);}
+#irp-app .irp-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--irp-solid);color:#fff;display:grid;place-items:center;font-size:15px;font-family:var(--irp-display);font-weight:600;}
+#irp-app .irp-opts{display:grid;gap:8px;padding-left:42px;}
+#irp-app .irp-opts.two{grid-template-columns:1fr 1fr;}
+@media (max-width:480px){#irp-app .irp-opts{padding-left:0;}}
+#irp-app .irp-opt{position:relative;display:flex;align-items:center;gap:12px;border:1.5px solid var(--irp-line);border-radius:10px;padding:12px 14px;background:var(--irp-paper);cursor:pointer;min-height:52px;}
+#irp-app .irp-opt input{position:absolute;opacity:0;width:1px;height:1px;}
+#irp-app .irp-opt .dot{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--irp-blue-mid);display:grid;place-items:center;}
+#irp-app .irp-opt input:checked ~ .dot{border-color:var(--irp-accent);}
+#irp-app .irp-opt input:checked ~ .dot::after{content:"";width:12px;height:12px;border-radius:50%;background:var(--irp-teal-deep);}
+#irp-app .irp-opt:has(input:checked){border-color:var(--irp-accent);background:var(--irp-tint);}
+#irp-app .irp-opt:has(input:focus-visible){outline:3px solid var(--irp-blue-mid);outline-offset:2px;}
+#irp-app .irp-opt .l{font-size:14px;color:var(--irp-muted);font-weight:700;margin-right:-4px;}
+#irp-app .irp-opt .hint{display:block;font-size:14px;color:var(--irp-muted);}
+#irp-app .irp-opt .box{flex:none;width:22px;height:22px;border-radius:5px;border:2px solid var(--irp-blue-mid);display:grid;place-items:center;}
+#irp-app .irp-opt .box svg{width:14px;height:14px;opacity:0;}
+#irp-app .irp-opt input:checked ~ .box{background:var(--irp-teal-deep);border-color:var(--irp-accent);}
+#irp-app .irp-opt input:checked ~ .box svg{opacity:1;}
+#irp-app .irp-opt.soft{border-style:dashed;}
+
+/* talk together */
+#irp-app .irp-say{display:grid;gap:16px;}
+#irp-app .irp-say h4{font-family:var(--irp-display);font-size:16px;font-weight:600;color:var(--irp-fg);margin:0;}
+#irp-app .irp-say .sub{font-size:14px;color:var(--irp-muted);margin-top:2px;}
+#irp-app ul.irp-lines{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:6px;}
+#irp-app ul.irp-lines li{border-left:3px solid var(--irp-light1);padding:2px 0 2px 12px;}
+#irp-app ul.irp-tips{margin:8px 0 0;padding-left:20px;display:grid;gap:6px;}
+#irp-app .irp-starter{background:var(--irp-tint);border-radius:8px;padding:10px 12px;}
+#irp-app .irp-starter .qlabel{margin-bottom:2px;}
+
+/* support check: three choice rows */
+#irp-app .irp-group{display:grid;gap:12px;}
+#irp-app .irp-group h3{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--irp-accent);border-bottom:2px solid var(--irp-teal);padding-bottom:6px;font-weight:600;}
+#irp-app fieldset.irp-item{display:grid;gap:8px;border:1.5px solid var(--irp-line);border-radius:10px;padding:12px 14px;background:var(--irp-paper);min-width:0;}
+#irp-app .irp-item legend{float:left;width:100%;font-weight:700;margin-bottom:8px;}
+#irp-app .irp-tri{display:flex;flex-wrap:wrap;gap:6px;clear:both;}
+#irp-app .irp-pill{position:relative;display:inline-flex;align-items:center;border:1.5px solid var(--irp-light2);border-radius:999px;padding:7px 14px;font-size:15px;color:var(--irp-blue);background:var(--irp-paper);cursor:pointer;min-height:40px;}
+#irp-app .irp-pill input{position:absolute;opacity:0;width:1px;height:1px;}
+#irp-app .irp-pill:has(input:checked){background:var(--irp-teal-deep);border-color:var(--irp-accent);color:#fff;font-weight:700;}
+#irp-app .irp-pill:has(input:focus-visible){outline:3px solid var(--irp-blue-mid);outline-offset:2px;}
+
+#irp-app .irp-meter{background:var(--irp-tint);border-left:5px solid var(--irp-teal-deep);border-radius:8px;padding:14px 16px;display:grid;gap:8px;}
+#irp-app .irp-meter .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;}
+#irp-app .irp-meter .count{font-family:var(--irp-display);font-weight:700;font-size:22px;font-variant-numeric:tabular-nums;}
+#irp-app .irp-bar{height:10px;border-radius:6px;background:var(--irp-paper);border:1px solid var(--irp-line);overflow:hidden;}
+#irp-app .irp-bar span{display:block;height:100%;background:var(--irp-teal);transition:width .3s ease;}
+#irp-app .irp-ready{background:var(--irp-solid);color:#fff;border-radius:10px;padding:16px 18px;display:flex;gap:14px;align-items:center;}
+#irp-app .irp-ready strong{font-family:var(--irp-display);font-size:20px;color:#fff;}
+#irp-app .irp-ready .acc{flex:none;width:12px;align-self:stretch;border-radius:6px;background:var(--irp-pink);}
+
+/* roadmap */
+#irp-app .irp-part{display:grid;gap:14px;}
+#irp-app .irp-part > h3{font-size:20px;}
+#irp-app .irp-card{border:1.5px solid var(--irp-line);border-radius:12px;overflow:hidden;background:var(--irp-paper);}
+#irp-app .irp-card .top{background:var(--irp-tint);padding:10px 16px;border-bottom:1px solid var(--irp-line);}
+#irp-app .irp-card .qlabel{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--irp-accent);font-weight:700;}
+#irp-app .irp-card .qtext{font-family:var(--irp-display);font-weight:600;font-size:17px;}
+#irp-app .irp-card .ans{color:var(--irp-accent);font-weight:700;}
+#irp-app .irp-card .inner{padding:14px 16px;display:grid;gap:10px;}
+#irp-app .irp-quote{font-family:var(--irp-display);font-size:19px;font-weight:500;color:var(--irp-fg);border-left:4px solid var(--irp-pink);padding-left:12px;}
+#irp-app ul.irp-list{list-style:none;display:grid;gap:12px;}
+#irp-app ul.irp-list li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;}
+#irp-app ul.irp-list li > div{min-width:0;}
+#irp-app ul.irp-list b{color:var(--irp-fg);}
+#irp-app .chip{display:inline-block;font-size:12px;letter-spacing:.04em;text-transform:uppercase;font-weight:700;border-radius:999px;padding:3px 10px;margin-top:2px;white-space:nowrap;min-width:92px;text-align:center;}
+#irp-app .chip.E{background:var(--irp-light3);color:var(--irp-fg);}
+#irp-app .chip.A{background:var(--irp-teal);color:#fff;}
+#irp-app .chip.O{background:var(--irp-blue-mid);color:#fff;}
+#irp-app .chip.T{background:var(--irp-solid);color:#fff;}
+#irp-app .chip.Q{background:var(--irp-paper);color:var(--irp-accent);border:1.5px solid var(--irp-teal-deep);}
+#irp-app .irp-ladder{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+@media (max-width:560px){#irp-app .irp-ladder{grid-template-columns:1fr;}}
+#irp-app .irp-ladder > div{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;font-size:15px;}
+#irp-app .irp-empty{color:var(--irp-muted);display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+#irp-app .irp-link{background:none;border:0;color:var(--irp-accent);text-decoration:underline;padding:0;font-weight:700;}
+#irp-app .irp-tipgroup{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--irp-accent);font-weight:700;margin-top:4px;}
+
+#irp-app .irp-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;align-items:center;}
+#irp-app .irp-btn{border:0;border-radius:10px;padding:13px 20px;font-weight:700;font-size:16px;background:var(--irp-blue-mid);color:#fff;min-height:48px;}
+#irp-app .irp-btn:hover{background:var(--irp-blue);}
+#irp-app .irp-btn.ghost{background:var(--irp-paper);color:var(--irp-blue);border:1.5px solid var(--irp-light2);}
+#irp-app .irp-btn.ghost:hover{background:var(--irp-tint);}
+#irp-app .irp-btn.dark{background:var(--irp-solid);}
+#irp-app .irp-btn.dark:hover{background:var(--irp-blue);}
+#irp-app .irp-confirm{background:var(--irp-paper);border:1.5px solid var(--irp-pink);border-radius:10px;padding:12px 14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+#irp-app .irp-note{font-size:14px;color:var(--irp-muted);}
+#irp-app .irp-saved{font-size:14px;color:var(--irp-accent);font-weight:700;}
+#irp-app .irp-foot{border-top:1px solid var(--irp-line);padding-block:12px;font-size:13px;color:var(--irp-muted);background:var(--irp-paper);}
+@media (prefers-reduced-motion:reduce){#irp-app *{transition:none!important;}}
+html.embed #irp-app .irp-head{display:none}
+</style>
+</head><body>
+<div id="irp-app">
+  <header class="irp-head irp-pad">
+    <div>
+    <h1>Interview Ready Parent Roadmap</h1>
+    <p class="irp-sub">Wired to Work: Your Brain, Your Path</p>
+    <p class="irp-tag">Support your young adult in a way that keeps them in the lead.</p>
+    </div>
+    <svg class="irp-star" viewBox="0 0 100 100" aria-hidden="true"><g id="irp-rose"></g></svg>
+  </header>
+
+  <nav class="irp-steps irp-pad" aria-label="Roadmap steps">
+    <button class="irp-stepbtn" data-go="1" type="button"><span class="n">1</span><span class="t">Your answers</span></button>
+    <button class="irp-stepbtn" data-go="2" type="button"><span class="n">2</span><span class="t">Support check</span></button>
+    <button class="irp-stepbtn" data-go="3" type="button"><span class="n">3</span><span class="t">Your roadmap</span></button>
+  </nav>
+
+  <div class="irp-body irp-pad">
+    <section id="irp-s1" aria-labelledby="irp-h1">
+      <h2 id="irp-h1">Where you see things right now</h2>
+      <div class="irp-who">
+        <div class="irp-field"><label for="irp-name">Your name</label><input id="irp-name" type="text" autocomplete="given-name"></div>
+        <div class="irp-field"><label for="irp-ya">Your young adult's name</label><input id="irp-ya" type="text" autocomplete="off"></div>
+        <div class="irp-field"><label for="irp-date">Date</label><input id="irp-date" type="date"></div>
+      </div>
+      <p class="irp-callout"><strong>How to use this roadmap.</strong> Answer from what you see right now. Pick one answer for each question. Your roadmap gives you ways to help that keep your young adult in the lead. Your answers can change. Come back after you talk.</p>
+      <div class="irp-field">
+        <div class="irp-qhead"><span class="irp-num">1</span><label for="irp-strength" style="font:inherit;color:inherit">One strength I see in my young adult is:</label></div>
+        <textarea id="irp-strength" placeholder="Example: He's patient and explains things clearly. He taught his cousin to code."></textarea>
+      </div>
+      <div id="irp-questions" style="display:grid;gap:26px"></div>
+      <div class="irp-actions"><span class="irp-note" id="irp-q-status"></span><button class="irp-btn" type="button" data-go="2">Next: support check</button></div>
+    </section>
+
+    <section id="irp-s2" aria-labelledby="irp-h2" hidden>
+      <h2 id="irp-h2">Support check</h2>
+      <p class="irp-lede">Start with the practical details. Then choose Yes, Not yet or I haven't asked for each item. Your young adult is the best source for these answers. If you haven't asked, that's okay. It becomes a conversation starter on your roadmap.</p>
+      <div id="irp-checklist" style="display:grid;gap:22px"></div>
+      <div class="irp-meter" aria-live="polite">
+        <div class="row"><strong>Done or marked yes</strong><span class="count"><span id="irp-count">0</span> of 13</span></div>
+        <div class="irp-bar"><span id="irp-bar" style="width:0%"></span></div>
+        <span class="irp-note" id="irp-answered"></span>
+      </div>
+      <div class="irp-actions"><button class="irp-btn ghost" type="button" data-go="1">Back</button><button class="irp-btn" type="button" data-go="3">See my roadmap</button></div>
+    </section>
+
+    <section id="irp-s3" aria-labelledby="irp-h3" hidden>
+      <h2 id="irp-h3">My support roadmap</h2>
+      <div id="irp-ready-top"></div>
+
+      <div class="irp-card"><div class="top"><div class="qlabel">Start here</div><div class="qtext" id="irp-see-h">What I see in my young adult</div></div><div class="inner" id="irp-see"></div></div>
+
+      <div class="irp-card"><div class="top"><div class="qlabel">My support style</div><div class="qtext" id="irp-style-h">Choose your role in step 1</div></div><div class="inner" id="irp-style"></div></div>
+
+      <div class="irp-part">
+        <h3>Talk together</h3>
+        <p class="irp-lede">These help your young adult open up and keep the choices with them. Use your own words. Pick the ones that sound like you.</p>
+        <div class="irp-card"><div class="top"><div class="qlabel">Conversation starters</div><div class="qtext">Ways to start the talk</div></div>
+          <div class="inner irp-say">
+            <div><h4>Open the door</h4><p class="sub">Questions with no right answer.</p>
+              <ul class="irp-lines"><li>"How are you feeling about this interview?"</li><li>"What part are you looking forward to?"</li><li>"What's on your mind about it?"</li></ul></div>
+            <div><h4>Hand them the choice</h4><p class="sub">They decide how much help they get.</p>
+              <ul class="irp-lines"><li>"Do you want help with this, or do you want to handle it yourself?"</li><li>"Would it help more if I listened or gave ideas?"</li><li>"Is now a good time to talk about it, or later?"</li></ul></div>
+            <div><h4>Listen without fixing</h4><p class="sub">Use these after they share.</p>
+              <ul class="irp-lines"><li>"That makes sense."</li><li>"What do you think you'll do?"</li><li>"Do you want my thoughts, or did you just need to say it out loud?"</li></ul></div>
+            <div><h4>Repair if you overstep</h4><p class="sub">Everyone jumps in too fast sometimes. These keep trust strong.</p>
+              <ul class="irp-lines"><li>"I think I jumped in too fast. Let me try again."</li><li>"You've got this one. I'll step back."</li><li>"Tell me if I'm helping too much."</li></ul></div>
+          </div></div>
+        <div class="irp-callout"><strong>How to ask.</strong>
+          <ul class="irp-tips">
+            <li>Talk side by side. A car ride, a walk or cooking together often feels easier than sitting face to face.</li>
+            <li>Ask one question at a time. Give them time to answer.</li>
+            <li>Skip "why" questions. They can feel like a test. Try "what" or "how."</li>
+            <li>Let them say no. "Not now" is a real answer.</li>
+          </ul></div>
+        <div class="irp-card"><div class="top"><div class="qlabel">Go first</div><div class="qtext">Share a little of your own story</div></div>
+          <div class="inner"><p>When you open up first, it's easier for them to open up too. Keep it short and bring it back to them.</p>
+            <p class="irp-quote">"My first interview made me so nervous I forgot the interviewer's name. What feels hard for you?"</p></div></div>
+      </div>
+
+      <div class="irp-part">
+        <h3>The support ladder</h3>
+        <p class="irp-lede">Each step on your roadmap has a level. Start at the lightest level that works. Next time, try one level lighter.</p>
+        <div class="irp-ladder">
+          <div><span class="chip E">Encourage</span><span>Say what you see.</span></div>
+          <div><span class="chip A">Ask</span><span>Let them tell you what they need.</span></div>
+          <div><span class="chip O">Offer</span><span>Name one way you could help. Let them choose.</span></div>
+          <div><span class="chip T">Do together</span><span>Only when they ask.</span></div>
+        </div>
+      </div>
+
+      <div class="irp-part">
+        <h3>Part 1: ways to support, from your answers</h3>
+        <p class="irp-lede">Change an answer and these steps change. Pick one or two to try.</p>
+        <div id="irp-part1" style="display:grid;gap:14px"></div>
+      </div>
+
+      <div class="irp-part">
+        <h3>Part 2: conversations to have</h3>
+        <p class="irp-lede">These come from your support check. Ask first. Their answer tells you how much help they want.</p>
+        <div id="irp-part2" style="display:grid;gap:14px"></div>
+      </div>
+
+      <div class="irp-field">
+        <label for="irp-words" class="big">In their words: how they want my help</label>
+        <span class="irp-note">Fill this in after you talk. Use their words, not yours.</span>
+        <textarea id="irp-words" placeholder="Example: Ask me questions but don't fix my answers. Drive me but wait in the car."></textarea>
+      </div>
+      <div class="irp-field">
+        <label for="irp-wsup" class="big">One way I will support them this week</label>
+        <textarea id="irp-wsup" placeholder="Example: Listen to their 60 second answer on Thursday, if they want me to."></textarea>
+      </div>
+      <div class="irp-field">
+        <label for="irp-wstep" class="big">One way I will step back this week</label>
+        <textarea id="irp-wstep" placeholder="Example: Let them email the coordinator on their own."></textarea>
+      </div>
+      <p class="irp-callout"><strong>Compare roadmaps.</strong> If your young adult filled out their own Interview Ready Roadmap, sit down together. Start with where you agree. Then ask about where you differ. Their answers lead the plan.</p>
+      <div class="irp-actions">
+        <button class="irp-btn ghost" type="button" id="irp-reset">Start over</button>
+      </div>
+      <div id="irp-confirm" class="irp-confirm" hidden>
+        <span>Clear all your answers?</span>
+        <button class="irp-btn ghost" type="button" id="irp-reset-no">Keep them</button>
+        <button class="irp-btn dark" type="button" id="irp-reset-yes">Yes, clear</button>
+      </div>
+      <p class="irp-note">Your answers save on this device. Come back after you talk and update them.</p>
+    </section>
+  </div>
+
+  <footer class="irp-foot irp-pad">Groundwork Collaborative | Wired to Work: Your Brain, Your Path</footer>
+</div>
+
+<script>
+(function(){
+  var LV = {E:"Encourage", A:"Ask", O:"Offer", T:"Do together", Q:"Ask"};
+  var ROLES = [
+    {k:"cheer", label:"Cheerleader", hint:"I mostly encourage", title:"Keep cheering and add curiosity",
+     text:"Your encouragement matters. This time, add a few questions so they can tell you what they need beyond a pep talk.",
+     starter:"\"What would help besides encouragement?\""},
+    {k:"coach", label:"Coach", hint:"I guide and they lead", title:"Coach from the sidelines",
+     text:"You already guide without taking over. Keep asking before you offer. Look for one place where they can do more on their own.",
+     starter:"\"Where do you want me to step back?\""},
+    {k:"manager", label:"Manager", hint:"I do a lot of it", title:"Moving from Manager to Coach",
+     text:"You've been carrying a lot of this. This time, ask first and offer second. Let them make the calls on email, scheduling and practice.",
+     starter:"\"What's one thing you want to handle on your own this time?\""},
+    {k:"side", label:"On the sidelines", hint:"I'm not sure how to help", title:"Stepping in, gently",
+     text:"You may be giving them space on purpose, or you may not be sure where to start. Begin with one question and let them set how involved you are.",
+     starter:"\"I'd like to help if you want me to. What would be useful?\""}
+  ];
+  var Q = [
+    {id:"q1", text:"My biggest concern for my young adult's interviews is:", two:false, opts:[
+      {k:"a", label:"How they present themselves", steps:[
+        ["E","Name what already works. Tell them one thing you see them do well, like a warm smile or a steady voice."],
+        ["A","Ask before you give feedback. Try, \"Do you want my thoughts on how that came across?\""],
+        ["O","Offer a practice greeting. Try, \"Want to run a quick hello and handshake with me?\" Keep it short and light."],
+        ["E","Respect their eye contact style. Looking near the eyes or the bridge of the nose is enough. The goal is for them to be seen clearly as themselves."]]},
+      {k:"b", label:"Creating stories to answer the \"tell me about\" questions", steps:[
+        ["A","Ask which stories they're considering. Try, \"What experiences are you thinking of using?\""],
+        ["O","Offer memories they might forget. Try, \"Want me to name a few times I saw you shine? You pick which ones fit.\""],
+        ["A","Ask how they want to practice. They may want questions, quiet listening or feedback only at the end."],
+        ["E","Keep the story in their words. If they ask for feedback, suggest one change at a time."]]},
+      {k:"c", label:"Meeting someone they don't know", steps:[
+        ["E","Share what interviewers want. The interviewer wants to like them. They booked the time to fill the role."],
+        ["A","Ask what feels hardest. Try, \"What part of meeting someone new feels toughest?\" Listen before you suggest anything."],
+        ["O","Offer a mock interview. Try, \"Want me to find someone you don't know well to run a 20 minute practice?\""],
+        ["E","Share a pause phrase. \"That's a good question, let me give it a little thought\" gives anyone time to think."]]},
+      {k:"d", label:"Talking about themselves", steps:[
+        ["E","Name a strength with an example. Try, \"You explained that so clearly. That's a strength.\""],
+        ["A","Ask how they want to practice. Try, \"Do you want to run your 60 second answer by me, or practice on your own?\""],
+        ["O","Offer to time them. Keep feedback to what worked unless they ask for more."],
+        ["E","Model strengths based language. Talk about them the way you hope they'll talk about themselves."]]}
+    ]},
+    {id:"q2", text:"I am worried that my young adult:", two:false, opts:[
+      {k:"a", label:"Doesn't fit 100% of the criteria", steps:[
+        ["E","Normalize the wish list. Required means the baseline. Preferred means the company may trade it for the right person."],
+        ["A","Ask what pulled them to the job. Try, \"What part of this role caught your interest?\""],
+        ["O","Offer to spot hidden skills. Try, \"Want me to point out skills from school or hobbies that match?\" Let them decide what goes on the resume."],
+        ["E","Let them write it. Their resume and answers should sound like them."]]},
+      {k:"b", label:"Has never had a real job", steps:[
+        ["E","Remind them what counts. Volunteer work, coursework, caregiving, internships and online projects all count as experience."],
+        ["A","Ask what they're proud of. Try, \"What have you done that you're proud of?\" Their list may surprise you."],
+        ["O","Offer to brainstorm together. Try, \"Want to list everything you've done? You pick what fits each posting.\""],
+        ["E","Share your belief in them. Your confidence in their experience helps build theirs."]]},
+      {k:"c", label:"Has a resume that doesn't tell their whole story", steps:[
+        ["E","Remind them of the resume's job. It answers one question: why should we talk to this person?"],
+        ["A","Ask them to connect the dots. Try, \"How does this line on your resume fit what they're looking for?\""],
+        ["O","Offer a fresh set of eyes. Try, \"Want me to read it? I'll tell you what stands out first.\""],
+        ["E","Resist adding more. Clear and concise is best. The interview is their chance to tell the rest."]]}
+    ]},
+    {id:"q3", text:"This job aligns with their strengths and values:", two:true, opts:[
+      {k:"yes", label:"Yes", steps:[
+        ["A","Ask why it fits. Try, \"What about this job feels like you?\" Let them do the talking."],
+        ["E","Encourage balanced research. The About Us page and the mission and values are enough."],
+        ["O","Offer to brainstorm questions. Try, \"Want to come up with questions to ask them? You pick the final three.\""],
+        ["E","Remind them to pace themselves. Excitement can make anyone talk fast."]]},
+      {k:"no", label:"No", steps:[
+        ["E","Share the bigger picture. A first job leads to the next one. Careers rarely move in a straight line."],
+        ["A","Ask what they noticed. Try, \"What makes this one feel like less of a fit?\" Their instincts are useful information."],
+        ["O","Offer help with questions for the employer. They are interviewing the company too."],
+        ["E","Support the practice. It's okay to use this interview for practice and say no thank you later."]]}
+    ]}
+  ];
+  var P = [
+    {box:"They know the format, the time and who they are meeting.", tip:["E","Point them toward the answer. They can email the coordinator to confirm. Let them send it."]},
+    {box:"They tested their tech or planned their route.", tip:["O","Offer once. Try, \"Want me to join a test call or ride the route with you?\" Then let them decide."]},
+    {box:"They know when to leave and how they are getting there.", tip:["A","Ask about their plan. Ten to 15 minutes early is a good target. If you're driving, follow their plan."]},
+    {box:"They chose an outfit that fits and feels comfortable.", tip:["O","Offer to look together. Try, \"Want to go through your closet this weekend?\" Let them make the final call. If a tag or seam bothers them, believe them."]},
+    {box:"They have resume copies, a notepad and a pen.", tip:["O","Offer once. Try, \"Want me to help print resume copies?\" Let them pack their own bag."]}
+  ];
+  var PASK = "\"Want to run through the practical stuff together, or do you have it covered?\" If they want to, go through the open items below. If not, trust them to handle it.";
+  var G = [
+    {name:"How they want help", items:[
+      {box:"They told me how they want my help with this interview.", ask:"\"What would be most helpful from me for this interview?\" Some young adults want a practice partner. Others want space. Both are okay.", tip:["A","Check back in. Try, \"Have you thought about whether you want my help?\" It's okay if the answer is no."]},
+      {box:"They told me how they want my help with practice.", ask:"\"How do you want to practice? Questions from me, me just listening, or feedback at the end?\"", tip:["A","Follow their lead. Offer one kind of practice and let them change it."]}]},
+    {name:"Their story", items:[
+      {box:"They can answer \"tell me about yourself\" in 60 to 90 seconds.", ask:"\"How's your tell me about yourself answer coming along?\"", tip:["O","Offer to listen. Try, \"Want an audience for your answer? I'll just listen.\""]},
+      {box:"They know which experiences they want to talk about.", ask:"\"Which experiences are you planning to talk about?\"", tip:["O","Offer memories. Name a moment or two when they showed a strength. They choose which stories to use."]},
+      {box:"They can name 3 strengths with an example for each.", ask:"\"What strengths do you want them to know about?\"", tip:["E","Reflect their strengths back. Share one you see with a specific example. Let them put it in their own words."]}]},
+    {name:"The day", items:[
+      {box:"They have three questions ready to ask.", ask:"\"What do you plan to ask the interviewer?\"", tip:["O","Offer an idea if they want one. One example is \"What does success look like in the first 90 days?\""]},
+      {box:"We talked about what to do if they feel overloaded.", ask:"\"What helps you reset when things feel like too much?\"", tip:["T","Make a reset plan together. Talk about early signs of overload. Plan a pause, like a breath, a drink of water or a step outside."]},
+      {box:"They have a phrase ready for when they need a moment to think.", ask:"\"Do you have a go to line for when you need a second to think?\"", tip:["E","Share an option. \"That's a good question, let me give it a little thought\" works well. Let them choose their own words."]}]}
+  ];
+  var ITEMS = []; G.forEach(function(g){ g.items.forEach(function(it){ it.group=g.name; ITEMS.push(it); }); });
+  var TRI = [{k:"yes",l:"Yes"},{k:"notyet",l:"Not yet"},{k:"notasked",l:"I haven't asked"}];
+
+  var TOTAL = ITEMS.length + P.length;
+  var KEY = "gwc-interview-ready-parent-v3";
+  function blank(){ return {name:"", ya:"", date:"", strength:"", role:null, q:{q1:null,q2:null,q3:null}, prac:P.map(function(){return false;}), pracAsk:false, box:ITEMS.map(function(){return null;}), words:"", wsup:"", wstep:"", step:1}; }
+  var S = blank();
+  try { var raw = localStorage.getItem(KEY); if (raw) { var p = JSON.parse(raw); if (p && p.q && p.box && p.box.length===ITEMS.length && p.prac && p.prac.length===P.length) S = Object.assign(blank(), p); } } catch(e){}
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e){} }
+
+  var root = document.getElementById("irp-app");
+  function $(id){ return document.getElementById(id); }
+  function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+  function split(s){ var m = s.match(/^(.+?[.?!:])(\s+|$)([\s\S]*)$/); return m ? [m[1], m[3]] : [s, ""]; }
+  function chip(l){ return '<span class="chip '+l+'">'+LV[l]+'</span>'; }
+  function stepHTML(st){ var p = split(st[1]); return "<li>"+chip(st[0])+"<div><b>"+esc(p[0])+"</b>"+(p[1]?" "+esc(p[1]):"")+"</div></li>"; }
+  function askHTML(t){ return "<li>"+chip("Q")+"<div>"+esc(t)+"</div></li>"; }
+  function who(){ var n = (S.ya||"").trim(); return n || "your young adult"; }
+  function Who(){ var n = (S.ya||"").trim(); return n || "Your young adult"; }
+
+  // questions 2 to 6
+  var qh = '<fieldset class="irp-q"><legend><span class="irp-num">2</span><span>Right now my role in their job search feels like:</span></legend><div class="irp-opts">';
+  ROLES.forEach(function(r){
+    var id = "irp-role-"+r.k;
+    qh += '<label class="irp-opt" for="'+id+'"><input type="radio" name="irp-role" id="'+id+'" value="'+r.k+'"'+(S.role===r.k?' checked':'')+'><span class="dot"></span><span>'+esc(r.label)+'<span class="hint">'+esc(r.hint)+'</span></span></label>';
+  });
+  qh += '</div></fieldset>';
+  Q.forEach(function(q, i){
+    qh += '<fieldset class="irp-q"><legend><span class="irp-num">'+(i+3)+'</span><span>'+esc(q.text)+'</span></legend><div class="irp-opts'+(q.two?' two':'')+'">';
+    q.opts.forEach(function(o){
+      var id = "irp-"+q.id+"-"+o.k;
+      qh += '<label class="irp-opt" for="'+id+'"><input type="radio" name="irp-'+q.id+'" id="'+id+'" value="'+o.k+'"'+(S.q[q.id]===o.k?' checked':'')+'><span class="dot"></span>'+(q.two?'':'<span class="l">'+o.k+'.</span>')+'<span>'+esc(o.label)+'</span></label>';
+    });
+    qh += '</div></fieldset>';
+  });
+  $("irp-questions").innerHTML = qh;
+
+  // support check
+  var CHECK = '<svg viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var ch = '<div class="irp-group"><h3>Practical details</h3><p class="irp-note">Check what they have handled. Leave it open if it isn\'t done yet or you\'re not sure.</p>';
+  P.forEach(function(it, i){
+    var id = "irp-prac-"+(i+1);
+    ch += '<label class="irp-opt" for="'+id+'"><input type="checkbox" id="'+id+'" data-p="'+i+'"'+(S.prac[i]?' checked':'')+'><span class="box">'+CHECK+'</span><span>'+esc(it.box)+'</span></label>';
+  });
+  ch += '<label class="irp-opt soft" for="irp-prac-ask"><input type="checkbox" id="irp-prac-ask"'+(S.pracAsk?' checked':'')+'><span class="box">'+CHECK+'</span><span>I haven\'t asked about these yet</span></label></div>';
+  var n = 0;
+  G.forEach(function(g){
+    ch += '<div class="irp-group"><h3>'+esc(g.name)+'</h3>';
+    g.items.forEach(function(it){
+      ch += '<fieldset class="irp-item"><legend>'+esc(it.box)+'</legend><div class="irp-tri">';
+      TRI.forEach(function(t){
+        var id = "irp-box-"+(n+1)+"-"+t.k;
+        ch += '<label class="irp-pill" for="'+id+'"><input type="radio" name="irp-box-'+n+'" id="'+id+'" value="'+t.k+'" data-i="'+n+'"'+(S.box[n]===t.k?' checked':'')+'>'+t.l+'</label>';
+      });
+      ch += '</div></fieldset>';
+      n++;
+    });
+    ch += '</div>';
+  });
+  $("irp-checklist").innerHTML = ch;
+
+  ["name","ya","strength","words","wsup","wstep"].forEach(function(k){ $("irp-"+k).value = S[k] || ""; });
+  $("irp-date").value = S.date;
+
+  function readyBanner(){ return '<div class="irp-ready"><span class="acc"></span><div><strong>'+esc(Who())+' is interview ready.</strong><div>Every item is done or marked yes. Your job now is to cheer them on.</div></div></div>'; }
+
+  function render(){
+    var answered = Q.filter(function(q){ return S.q[q.id]; }).length + (S.role?1:0) + ((S.strength||"").trim()?1:0);
+    $("irp-q-status").textContent = answered + " of 5 answered";
+    var pracDone = S.prac.filter(Boolean).length;
+    var yes = S.box.filter(function(b){ return b==="yes"; }).length + pracDone;
+    var done2 = S.box.filter(Boolean).length;
+    $("irp-count").textContent = yes;
+    $("irp-bar").style.width = (yes/TOTAL*100)+"%";
+    $("irp-answered").textContent = done2 + " of " + ITEMS.length + " items answered. Open details and items marked Not yet or I haven't asked go on your roadmap.";
+    $("irp-ready-top").innerHTML = yes===TOTAL ? readyBanner() : "";
+
+    // strength
+    $("irp-see-h").textContent = "What I see in " + who();
+    var st = (S.strength||"").trim();
+    $("irp-see").innerHTML = st
+      ? '<p class="irp-quote">'+esc(st)+'</p><p>Tell them this before the interview. Hearing it from you helps them believe it.</p>'
+      : '<div class="irp-empty">Add a strength you see and it appears here. <button type="button" class="irp-link" data-go="1">Go to question 1</button></div>';
+
+    // role
+    var r = ROLES.filter(function(x){ return x.k===S.role; })[0];
+    $("irp-style-h").textContent = r ? r.title : "Choose your role in step 1";
+    $("irp-style").innerHTML = r
+      ? '<p>'+esc(r.text)+'</p><div class="irp-starter"><div class="qlabel">Try asking</div><div>'+esc(r.starter)+'</div></div>'
+      : '<div class="irp-empty">Answer question 2 and your support style appears here. <button type="button" class="irp-link" data-go="1">Go to question 2</button></div>';
+
+    // part 1
+    var p1 = "";
+    Q.forEach(function(q, i){
+      var o = q.opts.filter(function(x){ return x.k===S.q[q.id]; })[0];
+      p1 += '<div class="irp-card"><div class="top"><div class="qlabel">Question '+(i+3)+'</div><div class="qtext">'+esc(q.text)+(o?' <span class="ans">'+esc(o.label)+'</span>':'')+'</div></div><div class="inner">';
+      if (o) { p1 += '<ul class="irp-list">'+o.steps.map(stepHTML).join("")+'</ul>'; }
+      else { p1 += '<div class="irp-empty">Answer question '+(i+3)+' and your steps appear here. <button type="button" class="irp-link" data-go="1">Go to question '+(i+3)+'</button></div>'; }
+      p1 += '</div></div>';
+    });
+    $("irp-part1").innerHTML = p1;
+
+    // part 2
+    var asked = [], prog = [];
+    ITEMS.forEach(function(it, i){ if (S.box[i]==="notasked") asked.push(it); if (S.box[i]==="notyet") prog.push(it); });
+    var h = "";
+    var openP = P.filter(function(it, i){ return !S.prac[i]; });
+    if (openP.length) {
+      h += '<div class="irp-card"><div class="top"><div class="qlabel">Practical details</div><div class="qtext">'+openP.length+' still open</div></div><div class="inner">';
+      if (S.pracAsk) h += '<ul class="irp-list">'+askHTML(PASK)+'</ul>';
+      h += '<ul class="irp-list">'+openP.map(function(it){ return stepHTML(it.tip); }).join("")+'</ul></div></div>';
+    }
+    function grouped(list, fn){
+      var out = "", last = null, buf = [];
+      function flush(){ if (buf.length) { out += '<div class="irp-tipgroup">'+esc(last)+'</div><ul class="irp-list">'+buf.join("")+'</ul>'; buf = []; } }
+      list.forEach(function(it){ if (it.group!==last) { flush(); last = it.group; } buf.push(fn(it)); });
+      flush(); return out;
+    }
+    if (asked.length) h += '<div class="irp-card"><div class="top"><div class="qlabel">You haven\'t asked yet</div><div class="qtext">Questions to ask '+esc(who())+'</div></div><div class="inner">'+grouped(asked, function(it){ return askHTML(it.ask); })+'</div></div>';
+    if (prog.length) h += '<div class="irp-card"><div class="top"><div class="qlabel">Not yet</div><div class="qtext">Ways to support what is still in progress</div></div><div class="inner">'+grouped(prog, function(it){ return stepHTML(it.tip); })+'</div></div>';
+    if (!h) {
+      if (yes===TOTAL) h = readyBanner();
+      else h = '<div class="irp-empty">Finish your support check and your conversation starters appear here. <button type="button" class="irp-link" data-go="2">Go to support check</button></div>';
+    }
+    $("irp-part2").innerHTML = h;
+
+    [1,2,3].forEach(function(k){ $("irp-s"+k).hidden = S.step!==k; });
+    root.querySelectorAll(".irp-stepbtn").forEach(function(b){
+      var k = +b.getAttribute("data-go");
+      if (k===S.step) b.setAttribute("aria-current","step"); else b.removeAttribute("aria-current");
+      b.classList.toggle("done", (k===1 && answered===5) || (k===2 && done2===ITEMS.length));
+    });
+  }
+
+  function go(k){
+    S.step = k; save(); render();
+    if (window.__embed) { window.scrollTo(0,0); return; }
+    var top = root.getBoundingClientRect().top + window.pageYOffset - 10;
+    if (root.getBoundingClientRect().top < 0) window.scrollTo({top: top, behavior: "smooth"});
+  }
+  root.addEventListener("click", function(e){ var t = e.target.closest("[data-go]"); if (t) go(+t.getAttribute("data-go")); });
+  root.addEventListener("change", function(e){
+    var t = e.target;
+    if (t.type==="radio") {
+      if (t.name==="irp-role") S.role = t.value;
+      else if (t.hasAttribute("data-i")) S.box[+t.getAttribute("data-i")] = t.value;
+      else S.q[t.name.replace("irp-","")] = t.value;
+      save(); render();
+    }
+    if (t.type==="checkbox") {
+      if (t.id==="irp-prac-ask") S.pracAsk = t.checked; else S.prac[+t.getAttribute("data-p")] = t.checked;
+      save(); render();
+    }
+    if (t.id==="irp-date") { S.date = t.value; save(); }
+  });
+  ["name","ya","strength","words","wsup","wstep"].forEach(function(k){
+    $("irp-"+k).addEventListener("input", function(){ S[k] = this.value; save(); if (k==="ya"||k==="strength") render(); });
+  });
+
+  $("irp-reset").addEventListener("click", function(){ $("irp-confirm").hidden = false; });
+  $("irp-reset-no").addEventListener("click", function(){ $("irp-confirm").hidden = true; });
+  $("irp-reset-yes").addEventListener("click", function(){
+    S = blank(); save();
+    root.querySelectorAll("input[type=radio],input[type=checkbox]").forEach(function(i){ i.checked = false; });
+    ["name","ya","strength","words","wsup","wstep","date"].forEach(function(k){ $("irp-"+k).value = ""; });
+    $("irp-confirm").hidden = true; go(1);
+  });
+
+  // compass rose, same drawing as the Interview Ready Roadmap
+  (function(){
+    var g=document.getElementById("irp-rose"), cx=50, cy=50, out="";
+    for (var k=0;k<8;k++){
+      var a=(90-45*k)*Math.PI/180, L=k%2?30:46;
+      var pts=[[0,L],[22.5,9],[-22.5,9]].map(function(v){var aa=a+v[0]*Math.PI/180;return [(cx+v[1]*Math.cos(aa)).toFixed(1),(cy-v[1]*Math.sin(aa)).toFixed(1)].join(",");}).join(" ");
+      out+='<polygon points="'+pts+'" fill="'+(k===0?"#00A3B1":(k%2?"#4C95D6":"#FFFFFF"))+'"/>';
+    }
+    g.innerHTML=out+'<circle cx="50" cy="50" r="5" fill="#1C3557"/>';
+  })();
+
+  render();
+})();
+</script>
+
+</body></html>

@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script>if(/[?&]embed=1/.test(location.search)){document.documentElement.classList.add("embed");window.__embed=1;window.scrollTo=function(){try{parent.postMessage({gwcScroll:1},"*")}catch(e){}};}</script>
+<title>Interview Ready Roadmap</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@500;700&display=swap">
+<style>
+/* Layout: navy banner, one reading column. Questions first, roadmap after, checklist last. */
+:root {
+  --navy: #1C3557; --teal: #00838F; --blue: #2E75B6; --orange: #E87722;
+  --bg: #F6F8FB; --surface: #FFFFFF; --tint: #E0F4F5; --fg: #26303F; --muted: #5B6676;
+  --line: #CFD7E2; --on-navy: #FFFFFF; --banner: #1C3557; --link: #1F5E99; --accent: #00838F; --if: #C4600F;
+  --head: "Lexend", "Segoe UI", Arial, sans-serif; --body: "Atkinson Hyperlegible", "Segoe UI", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0E1727; --surface: #16233A; --tint: #12343B; --fg: #E6ECF5; --muted: #9FB0C6; --line: #2B3C57;
+  --banner: #14233B; --link: #7DB8EE; --accent: #35B7C3; --if: #F29A55; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #0E1727; --surface: #16233A; --tint: #12343B; --fg: #E6ECF5; --muted: #9FB0C6; --line: #2B3C57;
+  --banner: #14233B; --link: #7DB8EE; --accent: #35B7C3; --if: #F29A55; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 17px; line-height: 1.5; margin: 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--banner); z-index: 10; }
+h1, h2, h3 { font-family: var(--head); text-wrap: balance; margin: 0; }
+.wrap { max-width: 760px; margin: 0 auto; }
+header { background: var(--banner); color: var(--on-navy); margin-left: calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+  margin-right: calc(-1 * max(16px, env(safe-area-inset-right, 0px))); padding: 28px max(16px, env(safe-area-inset-right, 0px)) 24px max(16px, env(safe-area-inset-left, 0px));
+  border-bottom: 4px solid var(--teal); }
+header .wrap { display: flex; gap: 20px; align-items: center; justify-content: space-between; }
+header h1 { font-size: clamp(26px, 6vw, 36px); line-height: 1.15; color: #fff; }
+header p { margin: 6px 0 0; color: #C5D6E8; }
+header svg { flex: none; width: 76px; height: 76px; }
+main { padding-block: 28px 56px; display: grid; gap: 28px; }
+.intro { background: var(--tint); border-left: 6px solid var(--teal); border-radius: 8px; padding: 16px 20px; color: var(--fg); }
+.q { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px; min-width: 0; }
+.q h2 { font-size: 19px; line-height: 1.3; display: flex; gap: 12px; align-items: baseline; margin-bottom: 14px; }
+.num { flex: none; width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: #fff; font-size: 15px; display: inline-grid; place-items: center; transform: translateY(2px); }
+:root[data-theme="dark"] .num { background: var(--teal); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .num { background: var(--teal); } }
+fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 10px; min-width: 0; }
+.opt { position: relative; display: block; }
+.opt input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.box { display: flex; gap: 14px; align-items: center; min-height: 54px; padding: 10px 16px; border: 2px solid var(--line); border-radius: 10px; background: var(--surface); }
+.dot { flex: none; width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--blue); }
+.opt input:checked + .box { border-color: var(--teal); background: var(--tint); }
+.opt input:checked + .box .dot { background: var(--teal); border-color: var(--teal); box-shadow: inset 0 0 0 4px var(--tint); }
+.opt input:focus-visible + .box { outline: 3px solid var(--link); outline-offset: 2px; }
+.letter { font-family: var(--head); font-weight: 700; color: var(--accent); }
+.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+button { font: inherit; font-family: var(--head); font-weight: 500; font-size: 16px; border-radius: 10px; padding: 14px 24px; min-height: 50px; cursor: pointer; }
+.primary { background: var(--navy); color: #fff; border: 2px solid var(--navy); }
+:root[data-theme="dark"] .primary { background: var(--teal); border-color: var(--teal); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .primary { background: var(--teal); border-color: var(--teal); } }
+.primary:disabled { opacity: .45; cursor: not-allowed; }
+.ghost { background: transparent; color: var(--link); border: 2px solid var(--blue); }
+button:focus-visible { outline: 3px solid var(--link); outline-offset: 2px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.hint { color: var(--muted); font-size: 15px; margin: 0; }
+.sec-title { font-size: 26px; line-height: 1.2; }
+.lead { margin: 6px 0 0; color: var(--muted); }
+.road { display: grid; gap: 16px; }
+.qbar { background: var(--banner); color: #fff; border-radius: 8px; padding: 10px 16px; font-family: var(--head); font-size: 15px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; min-width: 0; }
+.if { display: flex; gap: 12px; align-items: baseline; }
+.badge-if { flex: none; background: var(--if); color: #fff; font-family: var(--head); font-weight: 700; font-size: 13px; border-radius: 5px; padding: 2px 9px; }
+:root[data-theme="dark"] .badge-if, :root[data-theme="dark"] .badge-if { color: #1a1206; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .badge-if { color: #1a1206; } }
+.card h3 { font-size: 18px; line-height: 1.3; }
+.then { margin: 14px 0 4px; font-family: var(--head); font-weight: 700; font-size: 13px; letter-spacing: .08em; color: var(--accent); }
+.steps { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.steps { counter-reset: st; }
+.steps li { position: relative; padding-left: 34px; counter-increment: st; }
+.steps li::before { content: counter(st) "."; position: absolute; left: 0; top: 0; width: 26px; text-align: right; font-family: var(--head); font-weight: 700; color: var(--accent); }
+.card h3 { margin-bottom: 12px; }
+.chosen { color: var(--accent); }
+.steps b { color: var(--fg); }
+textarea { width: 100%; min-height: 96px; font: inherit; color: var(--fg); background: var(--surface); border: 2px solid var(--blue); border-radius: 10px; padding: 12px; resize: vertical; }
+label.fl { display: block; font-family: var(--head); font-weight: 500; margin-bottom: 8px; }
+.group h3 { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); border-bottom: 2px solid var(--teal); padding-bottom: 6px; margin-bottom: 8px; }
+.check { display: flex; gap: 14px; align-items: flex-start; padding: 10px 4px; cursor: pointer; }
+.check input { flex: none; width: 24px; height: 24px; margin: 1px 0 0; accent-color: var(--teal); cursor: pointer; }
+.status { background: var(--tint); border-left: 6px solid var(--teal); border-radius: 8px; padding: 16px 20px; position: sticky; bottom: 12px; border-top: 1px solid var(--line); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.status.ready { background: var(--navy); color: #fff; border-color: var(--navy); }
+:root[data-theme="dark"] .status.ready { background: var(--teal); border-color: var(--teal); color: #04161a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .status.ready { background: var(--teal); border-color: var(--teal); color: #04161a; } }
+.status strong { font-family: var(--head); font-size: 19px; display: block; }
+.bar { height: 10px; border-radius: 99px; background: var(--line); margin-top: 10px; overflow: hidden; }
+.bar span { display: block; height: 100%; background: var(--teal); width: 0; transition: width .25s; }
+.status.ready .bar { background: rgba(255,255,255,.3); } .status.ready .bar span { background: #fff; }
+.open-list { margin: 10px 0 0; padding-left: 20px; }
+@media (max-width: 520px) { .two { grid-template-columns: 1fr; } header svg { width: 56px; height: 56px; } .q { padding: 18px 16px; } }
+@media (prefers-reduced-motion: reduce) { .bar span { transition: none; } }
+.embed header{display:none}
+.embed main{padding-block:8px 24px}
+.embed body::before{display:none}
+</style>
+</head><body>
+
+<header>
+  <div class="wrap">
+    <div>
+      <h1>Interview Ready Roadmap</h1>
+      <p>Wired to Work: Your Brain, Your Path</p>
+    </div>
+    <svg viewBox="0 0 100 100" aria-hidden="true">
+      <g id="rose"></g>
+    </svg>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="ask" aria-label="Questions" style="display:grid;gap:20px">
+    <div class="intro" id="intro"></div>
+    <div id="questions" style="display:grid;gap:20px"></div>
+    <div>
+      <h2 class="sec-title">Are you interview ready?</h2>
+      <p class="lead" id="cl-intro"></p>
+    </div>
+    <div id="checklist" style="display:grid;gap:20px"></div>
+    <div class="status" id="status" role="status" aria-live="polite"></div>
+    <div class="row">
+      <button class="primary" id="go" disabled>Show my roadmap</button>
+      <p class="hint" id="gohint">Answer all four questions to continue.</p>
+    </div>
+  </section>
+
+  <section id="result" hidden aria-label="Your roadmap" style="display:grid;gap:28px">
+    <div>
+      <h2 class="sec-title">My roadmap</h2>
+      <p class="lead">Steps from your answers and the boxes you left open on the checklist. Change an answer or check a box and your steps change. Work one step at a time.</p>
+    </div>
+    <div id="road" class="road"></div>
+    <div id="road2" class="road" style="margin-top:-12px"></div>
+    <div>
+      <label class="fl" for="first">The one step I will take this week</label>
+      <textarea id="first"></textarea>
+    </div>
+    <div class="row"><button class="ghost" id="edit">Change my answers or checklist</button><button class="ghost" id="reset">Start over</button></div>
+  </section>
+</main>
+
+<script>
+const D = {"intro": "Choose the answer that MOST aligns with how you are feeling right now. Pick one answer for each question. Then follow your if then steps. Your answers can change. Come back after you practice.", "checklistIntro": "Answer the questions above first. Then check every box that is true today. Each box you leave open adds a step to your roadmap. Every box checked means you are interview ready.", "questions": [{"id": "q1", "prompt": "My biggest concern for interviews is:", "options": [{"id": "a", "label": "How to present myself", "steps": [["Start with your posture.", "Hold your head high and your shoulders back. It shows confidence and helps you feel it."], ["Make eye contact your way.", "Look as close to the person's eyes or at the bridge of their nose as feels comfortable for you. On video look at the camera lens. A sticky note beside the lens helps."], ["Use a clear voice.", "Speak a little slower than feels natural. It calms your breathing and gives you time to think."], ["Practice your greeting.", "Handshakes can feel awkward. Practice a firm grip. Say hello to everyone you meet, including the receptionist."], ["Let people see your strengths.", "Your goal is to be seen clearly as yourself, with more confidence."]]}, {"id": "b", "label": "Creating stories to answer the \"tell me about\" questions", "steps": [["Build a story library.", "Collect 4 or 5 stories from school projects, part time jobs, volunteer work and team situations. One story can answer many questions."], ["Use STAR.", "Situation, Task, Action, Result. Say \"I\" when you describe your action. End with the result. A result can be what you learned."], ["Practice out loud.", "Aim for three sessions over two or more days. Your first try is always the roughest version."], ["Add anchors.", "Write two or three key words per story in your notebook margin. They bring the story back if you lose your place."]]}, {"id": "c", "label": "Meeting someone I don't know", "steps": [["Start from the right place.", "The interviewer wants to like you. They booked the time to fill the role. Let them finish each question before you answer."], ["Learn the names.", "Ask who you will meet in your pre interview email. Use their names in the room."], ["First impressions matter.", "You may encounter multiple people during an in-person interview. Be prepared to greet people clearly and present the best version of yourself."], ["Buy a beat.", "Try, \"That's a good question, let me give it a little thought.\" Long silences feel shorter to the interviewer than they do to you."], ["Practice with a person.", "Record yourself alone first. Then ask someone to run a 20 minute mock interview with you."]]}, {"id": "d", "label": "Talking about myself", "steps": [["Prep a 60 to 90 second answer.", "Cover who you are, what you bring and why you want this role. Skip your life story."], ["Choose relevant facts that you want the interviewer to know.", "For example, the treasurer of the chess club may be applicable for a finance role. Leave out the rest."], ["Use strengths based language when you talk about yourself.", ""], ["Name 3 strengths with an example each.", "Say them out loud until they sound like you."], ["Prepare your answer for your biggest weakness or area of growth.", "Pick something real you are working on. Say what you are doing about it. Avoid \"I work too hard.\""]]}]}, {"id": "q2", "prompt": "I am worried that:", "options": [{"id": "a", "label": "I don't fit 100% of the criteria", "steps": [["Read the posting as a wish list.", "Required means the baseline. Preferred means they may trade it for the right person."], ["Apply when you match the core of the role.", "Companies want someone who grows into the job."], ["Show preferred skills with examples.", "Pull them from hobbies, school and volunteer work."], ["Borrow the posting's words.", "Applicant tracking systems search for keywords. Use similar language to the posting's language in your resume. Don't let AI mimic the posting."], ["Be ready to discuss what you need to learn and how you may go about it.", ""]]}, {"id": "b", "label": "I've never had a real job", "steps": [["Count what you have done.", "You can find experience in volunteer work, coursework, caregiving, internships and online projects like running a Discord server or building a mod."], ["Talk about your experience with measurable outcomes when you can.", "Use this formula: I did X which resulted in Y and made Z impact. Use strong action verbs. Keep it true."], ["If you need to, reorder your resume.", "Put a Skills section near the top. You can call the next section \"Relevant Experience\", rather than \"Work Experience\"."], ["Build a bullet bank.", "Brainstorm everything you have done. Draft your bullets. Then pick the few that fit each posting. This creates a plug and play for any job posting."], ["Extracurriculars can answer \"tell me about yourself\" when your work history is short.", ""]]}, {"id": "c", "label": "My resume doesn't tell my whole story", "steps": [["Your resume answers one question:", "why should we talk to this person?"], ["Be ready to talk about the needs you see in the job description with details on your resume.", "Avoid saying \"as you can see on my resume\"."], ["Focus on results.", "\"Answered phones\" becomes \"Managed high volume customer inquiries with a calm, accurate response process.\""], ["Clear and concise is best.", "You don't need your whole story on your resume or in the interview."], ["Be ready to explain your experience out loud.", "The recruiter saw something they liked on your resume and they want you to get the job. It's your job to show them why you should."]]}]}, {"id": "q3", "prompt": "This job aligns with my strengths and values:", "options": [{"id": "yes", "label": "Yes", "steps": [["Why are your strengths and values aligned?", "Say which strengths and values fit this role. Be prepared to give one example of each."], ["Research the company, but don't use all of your prep time on it.", "Read the About Us page and the mission, vision and values and be ready to share how these align with your own strengths and values. The goal is to let the company know about you, less than what you know about the company."], ["Bring three written questions.", "Some examples are, \"What does success look like in the first 90 days?\" and \"What does career growth look like from this role?\" End with \"Is there anything we haven't covered that I can tell you about me?\" Having specific questions that relate to the role or the company shows that you understand the organization and are interested in being part of it. This is a great opportunity to weave in something you know about the company and how it may relate to the role."], ["Slow your pace.", "Excitement can make you talk over people. Let the interviewer finish."], ["Follow up within 24 hours.", "Send a short thank you that mentions one specific moment from the conversation."]]}, {"id": "no", "label": "No", "steps": [["Your first job leads to the next one.", "Careers rarely move in a straight line. A first job can be a step. Approach the interview with an open mind and see if you can find similarities between your values and those of the company or team."], ["Name your strengths and values.", "Write 3 strengths with an example each. Add the values that matter most to you. Compare them to the posting."], ["Track what pulled you to each posting.", "A few notes on where you apply and why show patterns in what interests you."], ["Interview them too.", "Ask questions that give you real information about the work and the team."], ["Prepare anyway.", "Preparation makes the interview easier. A perfect match is optional. Remember you are evaluating the company as much as they are evaluating you. It's okay to use the interview for practice and say no thank you to moving on."]]}]}, {"id": "q4", "prompt": "I know what I am wearing:", "options": [{"id": "yes", "label": "Yes", "steps": [["Lay it out the night before.", "Check for stains, wrinkles and missing buttons."], ["Dress for the format.", "On video, dress fully from top to bottom. It affects how you feel and carry yourself."], ["Check for comfort.", "Look for seams, tags or fabric that bother you by the end of the day. Bring a layer in case the office runs cold."], ["Look in natural light.", "Check your appearance the morning of the interview."]]}, {"id": "no", "label": "No", "steps": [["Choose your outfit now.", "Dress the way you would for an in person interview, even on video. Pick something that fits and feels comfortable while presenting yourself professionally."], ["Test it for comfort.", "Skip clothes with seams or fabric that bother you within an hour or two."], ["Wear clothes that demonstrate professionalism.", "A button down shirt, ironed pants, a dress or a skirt and nice top. Never jeans, sandals or shorts."], ["Lay it out the night before.", "Check for stains, wrinkles and missing buttons. Look in natural light the morning of."]]}]}], "checklist": [["Know the plan", ["I know my interview format and who I am meeting.", "I have the time, the place or link and anything I need to bring.", "I tested my tech or visited the location.", "I know my route and arrival time, if applicable."]], ["Tell my story", ["I can answer \"tell me about yourself\" in 60 to 90 seconds.", "I know what experiences I want to talk about.", "My resume matches this posting.", "I can name a skill I am growing and what I am doing about it."]], ["Show up ready", ["I packed or prepared what I need, like resume copies, a notepad and a pen.", "I wrote down three questions to ask.", "I have a phrase ready for when I need a moment to think.", "I have a plan to reset if I feel overloaded."]]], "checkSteps": [["Confirm the interview format and names of the people you are meeting.", "If you need clarification, ask the coordinator: \"I want to make sure I'm prepared. Could you confirm the format and the platform you'll be using?\" Then prepare for the format you have."], ["Send one pre interview email.", "Ask who you will meet, how long to plan for and what to bring. Check that the invite lists the address or link. Follow up one time only."], ["Test your setup.", "Test your camera, mic and lighting the day before. Look at the lens when you talk. Close other windows. For an in person interview, visit the location or plan the route."], ["Plan your arrival.", "Arrive 10 to 15 minutes early, in the lobby and not the parking lot. Add time for walking and the elevator. For video, log on about 5 minutes ahead."], ["Write your 60 to 90 second answer.", "Cover who you are, what you bring and why you want this role. Practice it out loud until it sounds like you."], ["Choose your experiences.", "Pick 4 or 5 from school projects, part time jobs, volunteer work and team situations. Choose the ones that show what the interviewer wants to know. Add two or three key words per story in your notebook margin."], ["Tailor your resume.", "Highlight the skills that repeat in the posting. Use those words in your resume. Write results for each role. Keep it to one page."], ["Prepare your weakness or area of growth answer.", "Pick a skill you are really working on. Say what you are doing about it. Avoid \"I work too hard.\""], ["Pack and prepare.", "Bring 3 or more resume copies in a neat folder with a notepad and a pen. Lay out your outfit the night before and set two alarms."], ["Write three questions to ask.", "Try \"What does success look like in the first 90 days?\" Read the About Us page first. Bring your list on paper."], ["Choose a phrase to buy a beat.", "Try \"That's a good question, let me give it a little thought.\" Say it out loud a few times."], ["Make a reset plan.", "Learn your early signs of overload. Plan a pause with a breath, a drink of water or a step outside. Eat before you go."]]};
+const $ = (s) => document.querySelector(s);
+const el = (t, c, h) => { const e = document.createElement(t); if (c) e.className = c; if (h != null) e.innerHTML = h; return e; };
+const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+let state = { a: {}, c: {}, first: "" };
+try { const s = JSON.parse(localStorage.getItem("w2w-compass") || "null"); if (s) state = Object.assign(state, s); } catch (e) {}
+const save = () => { try { localStorage.setItem("w2w-compass", JSON.stringify(state)); } catch (e) {} };
+
+// compass rose
+(function () {
+  const g = $("#rose"); const cx = 50, cy = 50; let out = "";
+  for (let k = 0; k < 8; k++) {
+    const a = (90 - 45 * k) * Math.PI / 180, L = k % 2 ? 30 : 46;
+    const pts = [[0, L], [22.5, 9], [-22.5, 9]].map(([da, r]) => { const aa = a + da * Math.PI / 180; return [(cx + r * Math.cos(aa)).toFixed(1), (cy - r * Math.sin(aa)).toFixed(1)].join(","); }).join(" ");
+    out += `<polygon points="${pts}" fill="${k === 0 ? "#00A3B1" : (k % 2 ? "#4C95D6" : "#FFFFFF")}"/>`;
+  }
+  g.innerHTML = out + `<circle cx="50" cy="50" r="5" fill="#1C3557"/>`;
+})();
+
+$("#intro").textContent = D.intro;
+$("#cl-intro").textContent = D.checklistIntro;
+
+D.questions.forEach((q, qi) => {
+  const box = el("div", "q");
+  box.innerHTML = `<h2><span class="num">${qi + 1}</span><span>${esc(q.prompt)}</span></h2>`;
+  const fs = el("fieldset", (q.id === "q3" || q.id === "q4") ? "two" : ""); fs.innerHTML = `<legend class="hint" style="position:absolute;left:-9999px">${esc(q.prompt)}</legend>`;
+  q.options.forEach((o) => {
+    const lab = el("label", "opt");
+    const letter = (q.id === "q3" || q.id === "q4") ? "" : `<span class="letter">${o.id}.</span>`;
+    lab.innerHTML = `<input type="radio" name="${q.id}" value="${o.id}" id="${q.id}-${o.id}"><span class="box"><span class="dot"></span>${letter}<span>${esc(o.label)}</span></span>`;
+    const inp = lab.querySelector("input"); inp.checked = state.a[q.id] === o.id;
+    inp.addEventListener("change", () => { state.a[q.id] = o.id; save(); refresh(); if (!$("#result").hidden) renderRoad(); });
+    fs.appendChild(lab);
+  });
+  box.appendChild(fs); $("#questions").appendChild(box);
+});
+
+function refresh() {
+  const done = D.questions.every((q) => state.a[q.id]);
+  $("#go").disabled = !done;
+  $("#gohint").textContent = done ? "" : "Answer all four questions to continue.";
+}
+
+function renderRoad() {
+  const road = $("#road"); road.innerHTML = "";
+  D.questions.forEach((q, qi) => {
+    const o = q.options.find((x) => x.id === state.a[q.id]); if (!o) return;
+    const card = el("div", "card");
+    card.innerHTML = `<h3>${esc(q.prompt)} <span class="chosen">${esc(o.label)}</span></h3>` +
+      `<ol class="steps">${o.steps.map(([l, t]) => `<li><b>${esc(l)}</b> ${esc(t)}</li>`).join("")}</ol>`;
+    road.appendChild(card);
+  });
+}
+
+const flat = []; D.checklist.forEach(([g, items]) => items.forEach((t) => flat.push(t)));
+D.checklist.forEach(([g, items]) => {
+  const grp = el("div", "group"); grp.appendChild(el("h3", "", esc(g)));
+  items.forEach((t) => {
+    const i = flat.indexOf(t);
+    const lab = el("label", "check", `<input type="checkbox" id="c${i}"><span>${esc(t)}</span>`);
+    const cb = lab.querySelector("input"); cb.checked = !!state.c[i];
+    cb.addEventListener("change", () => { state.c[i] = cb.checked; save(); status(); });
+    grp.appendChild(lab);
+  });
+  $("#checklist").appendChild(grp);
+});
+
+function renderRoad2() {
+  const road = $("#road2"); road.innerHTML = "";
+  const open = flat.map((t, i) => i).filter((i) => !state.c[i]);
+  const card = el("div", "card");
+  card.innerHTML = open.length
+    ? `<h3>Still to do before your interview</h3><ol class="steps">${open.map((i) => `<li><b>${esc(D.checkSteps[i][0])}</b> ${esc(D.checkSteps[i][1])}</li>`).join("")}</ol>`
+    : `<p style="margin:0"><strong>All boxes are checked. You are interview ready.</strong></p>`;
+  road.appendChild(card);
+}
+
+function status() {
+  if (!$("#result").hidden) renderRoad2();
+  const n = flat.filter((_, i) => state.c[i]).length, tot = flat.length, s = $("#status");
+  const open = flat.filter((_, i) => !state.c[i]);
+  s.className = "status" + (n === tot ? " ready" : "");
+  s.innerHTML = n === tot
+    ? `<strong>You are interview ready.</strong>All ${tot} boxes are checked.<div class="bar"><span style="width:100%"></span></div>`
+    : `<strong>${n} of ${tot} boxes checked</strong>${open.length <= 4 ? "Still open:<ul class='open-list'>" + open.map((t) => `<li>${esc(t)}</li>`).join("") + "</ul>" : "Each open box adds a step to your roadmap."}<div class="bar"><span style="width:${Math.round(n / tot * 100)}%"></span></div>`;
+}
+
+$("#go").addEventListener("click", () => { $("#ask").hidden = true; $("#result").hidden = false; renderRoad(); renderRoad2(); status(); window.scrollTo(0, 0); });
+$("#edit").addEventListener("click", () => { $("#result").hidden = true; $("#ask").hidden = false; window.scrollTo(0, 0); });
+$("#reset").addEventListener("click", () => {
+  state = { a: {}, c: {}, first: "" }; save();
+  document.querySelectorAll("input").forEach((i) => (i.checked = false)); $("#first").value = "";
+  $("#result").hidden = true; $("#ask").hidden = false; refresh(); status(); window.scrollTo(0, 0);
+});
+$("#first").value = state.first || "";
+$("#first").addEventListener("input", (e) => { state.first = e.target.value; save(); });
+$("#result").hidden = true;
+refresh(); status();
+</script>
+</body></html>

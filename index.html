@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interview Ready Together</title>
+<meta name="description" content="The Interview Ready Roadmap for the learner, the parent roadmap and one Outcomes tab that brings them together. Wired to Work: Your Brain, Your Path.">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@500;600;700&display=swap">
+<style>
+:root{
+  --navy:#1C3557; --teal:#00838F; --blue:#2E75B6; --orange:#E87722;
+  --bg:#F6F8FB; --surface:#FFFFFF; --tint:#E0F4F5; --fg:#26303F; --muted:#5B6676;
+  --line:#CFD7E2; --banner:#1C3557; --link:#1F5E99; --accent:#00838F; --solid:#1C3557;
+  --warn-bg:#FFF3E6; --warn-line:#E87722;
+  --head:"Lexend","Segoe UI",Arial,sans-serif; --body:"Atkinson Hyperlegible","Segoe UI",Arial,sans-serif;
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0E1727; --surface:#16233A; --tint:#12343B; --fg:#E6ECF5; --muted:#9FB0C6; --line:#2B3C57;
+  --banner:#14233B; --link:#7DB8EE; --accent:#35B7C3; --solid:#00838F; --warn-bg:#2A2116; --warn-line:#F29A55;
+}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.5}
+h1,h2,h3,h4{font-family:var(--head);text-wrap:balance;margin:0;line-height:1.2}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{background:var(--banner);color:#fff;border-bottom:4px solid var(--teal);padding-block:28px 24px}
+header.top .wrap{display:flex;gap:20px;align-items:center;justify-content:space-between}
+header.top h1{font-size:clamp(26px,6vw,36px);color:#fff}
+header.top p{margin:6px 0 0;color:#C5D6E8}
+header.top svg{flex:none;width:76px;height:76px}
+nav.tabs{background:var(--tint);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+nav.tabs .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding-block:12px}
+.tab{font:inherit;font-weight:700;font-size:15px;background:var(--surface);color:var(--link);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;min-height:48px;cursor:pointer;text-align:center;line-height:1.2}
+.tab[aria-selected="true"]{background:var(--solid);border-color:var(--solid);color:#fff}
+.tab:focus-visible,button:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid var(--link);outline-offset:2px}
+.tab small{display:block;font-weight:400;font-size:12px;margin-top:2px;opacity:.85}
+main{padding-block:0 40px}
+iframe{display:block;width:100%;border:0;min-height:600px;background:transparent}
+[hidden]{display:none!important}
+#out{display:grid;gap:26px;padding-top:26px}
+h2.sec{font-size:24px}
+.lede{color:var(--muted);margin:6px 0 0}
+.callout{background:var(--tint);border-left:5px solid var(--teal);border-radius:8px;padding:14px 16px}
+.callout.warn{background:var(--warn-bg);border-left-color:var(--warn-line)}
+.meters{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.meters{grid-template-columns:1fr}}
+.meter{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.meter b{font-family:var(--head);font-size:22px;font-variant-numeric:tabular-nums}
+.meter .lab{font-size:14px;color:var(--muted)}
+.bar{height:10px;border-radius:99px;background:var(--line);margin-top:8px;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--teal)}
+.src{font-size:13px;color:var(--muted);margin-top:6px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.card .hd{background:var(--tint);padding:10px 16px;border-bottom:1px solid var(--line)}
+.card .hd .k{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.card .hd .t{font-family:var(--head);font-weight:600;font-size:17px}
+.card .bd{padding:14px 16px;display:grid;gap:12px}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.cmp{grid-template-columns:1fr}}
+.side{border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.side .who{font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.side .val{font-weight:700}
+.verdict{display:inline-block;font-size:13px;font-weight:700;border-radius:999px;padding:3px 12px}
+.v-match{background:var(--teal);color:#fff}
+.v-diff{background:var(--orange);color:#1a1206}
+.v-wait{background:var(--line);color:var(--fg)}
+.row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:start;padding:10px 0;border-top:1px solid var(--line)}
+.row:first-child{border-top:0;padding-top:0}
+.row .nm{font-weight:700}
+.row .note{font-size:15px;color:var(--muted)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.chip{font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap;border:1.5px solid var(--line)}
+.chip.yes{background:var(--teal);color:#fff;border-color:var(--teal)}
+.chip.no{background:transparent;color:var(--muted)}
+.grp h3{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border-bottom:2px solid var(--teal);padding-bottom:6px;margin-bottom:10px}
+textarea,input[type=text]{width:100%;font:inherit;color:var(--fg);background:var(--surface);border:2px solid var(--blue);border-radius:10px;padding:12px}
+textarea{min-height:96px;resize:vertical}
+.quote{border-left:4px solid var(--orange);padding-left:12px;font-family:var(--head);font-weight:500}
+.empty{color:var(--muted)}
+.btn{font:inherit;font-family:var(--head);font-weight:500;font-size:15px;border-radius:10px;padding:11px 18px;min-height:46px;cursor:pointer;background:var(--solid);color:#fff;border:2px solid var(--solid)}
+.btn.ghost{background:transparent;color:var(--link);border-color:var(--blue)}
+.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.small{font-size:14px;color:var(--muted)}
+.linkbtn{background:none;border:0;color:var(--link);text-decoration:underline;font:inherit;font-weight:700;cursor:pointer;padding:0}
+footer{border-top:1px solid var(--line);padding-block:14px;font-size:13px;color:var(--muted)}
+@media print{header.top,nav.tabs,footer,.noprint{display:none!important}body{background:#fff;color:#000}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div><h1>Interview Ready Together</h1><p>Wired to Work: Your Brain, Your Path</p></div>
+  <svg viewBox="0 0 100 100" aria-hidden="true"><g id="rose"></g></svg>
+</div></header>
+
+<nav class="tabs" aria-label="Sections"><div class="wrap" role="tablist">
+  <button class="tab" role="tab" id="t-learner" data-tab="learner" aria-controls="p-learner">Learner<small>Interview Ready Roadmap</small></button>
+  <button class="tab" role="tab" id="t-parent" data-tab="parent" aria-controls="p-parent">Parent<small>Support roadmap</small></button>
+  <button class="tab" role="tab" id="t-out" data-tab="outcomes" aria-controls="p-out">Outcomes<small>Side by side</small></button>
+</div></nav>
+
+<main class="wrap">
+  <section id="p-learner" role="tabpanel" aria-labelledby="t-learner"><iframe id="f-learner" src="learner.html?embed=1" title="Interview Ready Roadmap for the learner"></iframe></section>
+  <section id="p-parent" role="tabpanel" aria-labelledby="t-parent" hidden><iframe id="f-parent" src="parent.html?embed=1" title="Interview Ready Parent Roadmap"></iframe></section>
+  <section id="p-out" role="tabpanel" aria-labelledby="t-out" hidden><div id="out"></div></section>
+</main>
+<footer><div class="wrap">Groundwork Collaborative | Wired to Work: Your Brain, Your Path</div></footer>
+
+<script>
+(function(){
+  var KL="w2w-compass", KP="gwc-interview-ready-parent-v3", KIL="gwc-together-imp-l", KIP="gwc-together-imp-p", KPLAN="gwc-together-plan";
+  function $(s){return document.querySelector(s);}
+  function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+  function get(k){try{var r=localStorage.getItem(k);return r?JSON.parse(r):null;}catch(e){return null;}}
+  function set(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+  function del(k){try{localStorage.removeItem(k);}catch(e){}}
+
+  // compass rose, same drawing as the Interview Ready Roadmap
+  (function(){var g=$("#rose"),cx=50,cy=50,out="";
+    for(var k=0;k<8;k++){var a=(90-45*k)*Math.PI/180,L=k%2?30:46;
+      var pts=[[0,L],[22.5,9],[-22.5,9]].map(function(v){var aa=a+v[0]*Math.PI/180;return [(cx+v[1]*Math.cos(aa)).toFixed(1),(cy-v[1]*Math.sin(aa)).toFixed(1)].join(",");}).join(" ");
+      out+='<polygon points="'+pts+'" fill="'+(k===0?"#00A3B1":(k%2?"#4C95D6":"#FFFFFF"))+'"/>';}
+    g.innerHTML=out+'<circle cx="50" cy="50" r="5" fill="#1C3557"/>';})();
+
+  // ---------- tabs and iframe sizing
+  var TABS=["learner","parent","outcomes"], ID={learner:"p-learner",parent:"p-parent",outcomes:"p-out"}, TID={learner:"t-learner",parent:"t-parent",outcomes:"t-out"};
+  function fit(name){
+    var f=$("#f-"+name); if(!f||!f.contentDocument||!f.contentDocument.documentElement) return;
+    try{var h=Math.max(f.contentDocument.documentElement.scrollHeight,600); f.style.height=h+"px";}catch(e){}
+  }
+  function watch(name){
+    var f=$("#f-"+name);
+    function hook(){
+      try{
+        var d=f.contentDocument; if(!d||!d.documentElement) return;
+        fit(name);
+        if(window.ResizeObserver){new ResizeObserver(function(){fit(name);}).observe(d.documentElement);}
+        else{setInterval(function(){fit(name);},600);}
+      }catch(e){}
+    }
+    f.addEventListener("load",hook); if(f.contentDocument&&f.contentDocument.readyState==="complete") hook();
+  }
+  watch("learner"); watch("parent");
+  window.addEventListener("message",function(e){if(e.data&&e.data.gwcScroll){window.scrollTo({top:Math.max(0,$("nav.tabs").offsetTop),behavior:"smooth"});}});
+  window.addEventListener("resize",function(){fit("learner");fit("parent");});
+
+  function show(name,push){
+    if(TABS.indexOf(name)<0) name="learner";
+    TABS.forEach(function(t){
+      $("#"+ID[t]).hidden = t!==name;
+      $("#"+TID[t]).setAttribute("aria-selected", t===name?"true":"false");
+      $("#"+TID[t]).tabIndex = t===name?0:-1;
+    });
+    if(name==="outcomes") renderOut(); else fit(name);
+    if(push!==false){try{history.replaceState(null,"","#"+name);}catch(e){location.hash=name;}}
+    window.scrollTo(0,0);
+  }
+  document.querySelectorAll(".tab").forEach(function(b){b.addEventListener("click",function(){show(b.getAttribute("data-tab"));});
+    b.addEventListener("keydown",function(e){var i=TABS.indexOf(b.getAttribute("data-tab")),n=null;
+      if(e.key==="ArrowRight")n=TABS[(i+1)%3]; if(e.key==="ArrowLeft")n=TABS[(i+2)%3];
+      if(n){e.preventDefault();show(n);$("#"+TID[n]).focus();}});});
+  window.addEventListener("hashchange",function(){show((location.hash||"").slice(1),false);});
+  window.addEventListener("storage",function(){if(!$("#p-out").hidden) renderOut();});
+
+  // ---------- labels
+  var Q={
+    q1:{t:"Biggest concern about interviews",o:{a:"How they present themselves",b:"Creating stories for the \"tell me about\" questions",c:"Meeting someone they don't know",d:"Talking about themselves"}},
+    q2:{t:"Biggest worry",o:{a:"Not fitting 100% of the criteria",b:"Never having had a real job",c:"A resume that doesn't tell the whole story"}},
+    q3:{t:"This job aligns with strengths and values",o:{yes:"Yes",no:"No"}}
+  };
+  // paired checklist items: learner checklist index (or function), parent source
+  var PAIRS=[
+    {n:"Knows the interview format and who they are meeting",L:function(l){return !!l.c[0];},P:function(p){return !!p.prac[0];},pk:"prac"},
+    {n:"Tested the tech or visited the location",L:function(l){return !!l.c[2];},P:function(p){return !!p.prac[1];},pk:"prac"},
+    {n:"Knows the route and arrival time",L:function(l){return !!l.c[3];},P:function(p){return !!p.prac[2];},pk:"prac"},
+    {n:"Has an outfit that fits and feels comfortable",L:function(l){return l.a&&l.a.q4==="yes";},P:function(p){return !!p.prac[3];},pk:"prac"},
+    {n:"Packed resume copies, a notepad and a pen",L:function(l){return !!l.c[8];},P:function(p){return !!p.prac[4];},pk:"prac"},
+    {n:"Can answer \"tell me about yourself\" in 60 to 90 seconds",L:function(l){return !!l.c[4];},P:function(p){return p.box[2]==="yes";},ps:function(p){return p.box[2];}},
+    {n:"Knows which experiences to talk about",L:function(l){return !!l.c[5];},P:function(p){return p.box[3]==="yes";},ps:function(p){return p.box[3];}},
+    {n:"Has three questions ready to ask",L:function(l){return !!l.c[9];},P:function(p){return p.box[5]==="yes";},ps:function(p){return p.box[5];}},
+    {n:"Has a phrase ready for when they need a moment to think",L:function(l){return !!l.c[10];},P:function(p){return p.box[7]==="yes";},ps:function(p){return p.box[7];}},
+    {n:"Has a plan to reset if they feel overloaded",L:function(l){return !!l.c[11];},P:function(p){return p.box[6]==="yes";},ps:function(p){return p.box[6];}}
+  ];
+  var PS={yes:"Parent: yes",notyet:"Parent: not yet",notasked:"Parent: hasn't asked"};
+
+  // ---------- data sources (pasted code wins over this device)
+  function blankL(){return {a:{},c:{},first:""};}
+  function blankP(){return {name:"",ya:"",strength:"",role:null,q:{},prac:[false,false,false,false,false],pracAsk:false,box:[],words:"",wsup:"",wstep:""};}
+  function sources(){
+    var il=get(KIL), ip=get(KIP), dl=get(KL), dp=get(KP);
+    var L=il||dl, P=ip||dp;
+    return {
+      L:Object.assign(blankL(),L||{}), P:Object.assign(blankP(),P||{}),
+      Lfrom:il?"pasted code":(dl?"this device":null), Pfrom:ip?"pasted code":(dp?"this device":null),
+      hasL:!!(L&&((L.a&&Object.keys(L.a).length)||(L.c&&Object.keys(L.c).some(function(k){return L.c[k];}))||L.first)),
+      hasP:!!(P&&((P.q&&Object.keys(P.q).some(function(k){return P.q[k];}))||(P.box&&P.box.some(Boolean))||(P.prac&&P.prac.some(Boolean))||P.strength||P.role)),
+      localL:dl, localP:dp
+    };
+  }
+
+  function chip(text,yes){return '<span class="chip '+(yes?"yes":"no")+'">'+esc(text)+'</span>';}
+
+  function renderOut(){
+    var S=sources(), L=S.L, P=S.P, who=((P.ya||"").trim())||"the learner";
+    var lDone=Object.keys(L.c||{}).filter(function(k){return L.c[k];}).length;
+    var pYes=(P.box||[]).filter(function(b){return b==="yes";}).length+(P.prac||[]).filter(Boolean).length;
+    var h='';
+    h+='<div><h2 class="sec">Outcomes</h2><p class="lede">Both roadmaps side by side. Sit down together and let '+esc(who)+' lead. Start with what matches. Then talk about what differs.</p></div>';
+    h+='<div class="callout">Answers are not scored and nobody is graded. A difference is a good topic for a talk, not a problem to fix.</div>';
+
+    if(!S.hasL||!S.hasP){
+      var miss=[]; if(!S.hasL) miss.push('the <button class="linkbtn" data-go="learner">Learner roadmap</button>'); if(!S.hasP) miss.push('the <button class="linkbtn" data-go="parent">Parent roadmap</button>');
+      h+='<div class="callout warn"><strong>Not enough to compare yet.</strong> Fill in '+miss.join(' and ')+'. Or paste a code from another device at the bottom of this page.</div>';
+    }
+
+    h+='<div class="meters">'
+      +'<div class="meter"><div class="lab">Learner checklist</div><b>'+lDone+' of 12</b> boxes checked<div class="bar"><span style="width:'+Math.round(lDone/12*100)+'%"></span></div><div class="src">'+(S.Lfrom?'From '+S.Lfrom:'No answers yet')+'</div></div>'
+      +'<div class="meter"><div class="lab">Parent support check</div><b>'+pYes+' of 13</b> done or yes<div class="bar"><span style="width:'+Math.round(pYes/13*100)+'%"></span></div><div class="src">'+(S.Pfrom?'From '+S.Pfrom:'No answers yet')+'</div></div>'
+      +'</div>';
+
+    // 1. concerns
+    h+='<div class="grp"><h3>1. Where you see things</h3>';
+    Object.keys(Q).forEach(function(id,i){
+      var lv=L.a&&L.a[id], pv=P.q&&P.q[id];
+      var lt=lv?Q[id].o[lv]:null, pt=pv?Q[id].o[pv]:null, v,vc,line;
+      if(lt&&pt){ if(lv===pv){v="Same answer";vc="v-match";line="You see this the same way. A good place to start.";} else {v="Different answers";vc="v-diff";line="Learner first: \"Why did you pick that one?\" Parent: listen, then share what you see.";} }
+      else {v="Waiting";vc="v-wait";line=(!lt&&!pt)?"Neither side has answered yet.":(!lt?"Waiting for the learner to answer.":"Waiting for the parent to answer.");}
+      h+='<div class="card" style="margin-bottom:12px"><div class="hd"><div class="k">Question '+(i+1)+'</div><div class="t">'+esc(Q[id].t)+'</div></div><div class="bd">'
+        +'<div class="cmp"><div class="side"><div class="who">Learner</div><div class="val">'+(lt?esc(lt):'<span class="empty">Not answered</span>')+'</div></div>'
+        +'<div class="side"><div class="who">Parent</div><div class="val">'+(pt?esc(pt):'<span class="empty">Not answered</span>')+'</div></div></div>'
+        +'<div><span class="verdict '+vc+'">'+v+'</span> <span class="small">'+esc(line)+'</span></div></div></div>';
+    });
+    var st=(P.strength||"").trim();
+    h+='<div class="card"><div class="hd"><div class="k">Strength</div><div class="t">What the parent sees in '+esc(who)+'</div></div><div class="bd">'
+      +(st?'<p class="quote" style="margin:0">'+esc(st)+'</p><p class="small" style="margin:0">Parent: tell them this before the interview.</p>':'<p class="empty" style="margin:0">The parent has not added a strength yet.</p>')+'</div></div>';
+    h+='</div>';
+
+    // 2. checklist alignment
+    var groups={diffL:[],diffP:[],work:[],both:[]};
+    PAIRS.forEach(function(p){
+      var l=!!p.L(L), pr=!!p.P(P), ps=p.ps?p.ps(P):null;
+      var item={n:p.n,l:l,p:pr,ps:ps,pk:p.pk};
+      if(l&&pr)groups.both.push(item); else if(l&&!pr)groups.diffL.push(item); else if(!l&&pr)groups.diffP.push(item); else groups.work.push(item);
+    });
+    function rows(list,note){
+      return list.map(function(it){
+        var pl=it.p?"Parent: yes":(it.ps?PS[it.ps]:(it.pk==="prac"?"Parent: not marked":"Parent: no answer"));
+        return '<div class="row"><div><div class="nm">'+esc(it.n)+'</div>'+(note?'<div class="note">'+esc(note(it))+'</div>':'')+'</div><div class="chips">'+chip(it.l?"Learner: done":"Learner: open",it.l)+chip(pl,it.p)+'</div></div>';
+      }).join("");
+    }
+    h+='<div class="grp"><h3>2. Interview checklist, side by side</h3>';
+    var any=false;
+    if(groups.diffL.length){any=true;h+='<div class="card" style="margin-bottom:12px"><div class="hd"><div class="k">Different views</div><div class="t">Learner says done. Parent has not marked it.</div></div><div class="bd">'+rows(groups.diffL,function(){return "Learner: show or tell your parent. Parent: ask, and believe the answer.";})+'</div></div>';}
+    if(groups.diffP.length){any=true;h+='<div class="card" style="margin-bottom:12px"><div class="hd"><div class="k">Different views</div><div class="t">Parent says done. Learner has it open.</div></div><div class="bd">'+rows(groups.diffP,function(){return "Learner leads. Their view of what is ready counts. Ask what is left.";})+'</div></div>';}
+    if(groups.work.length){any=true;h+='<div class="card" style="margin-bottom:12px"><div class="hd"><div class="k">Work on together</div><div class="t">Both say still open</div></div><div class="bd">'+rows(groups.work,function(it){return it.ps==="notasked"?"Parent has not asked about this yet. Start there.":"Pick one or two for this week.";})+'</div></div>';}
+    if(groups.both.length){any=true;h+='<div class="card"><div class="hd"><div class="k">Ready</div><div class="t">Both say done</div></div><div class="bd">'+rows(groups.both,null)+'</div></div>';}
+    h+='</div>';
+
+    // parent only conversations
+    var po=[]; [[0,"They told me how they want my help with this interview."],[1,"They told me how they want my help with practice."],[4,"They can name 3 strengths with an example for each."]].forEach(function(x){po.push({n:x[1],s:(P.box||[])[x[0]]});});
+    h+='<div class="grp"><h3>Parent conversations</h3><div class="card"><div class="bd">'
+      +po.map(function(it){var s=it.s;return '<div class="row"><div class="nm">'+esc(it.n)+'</div><div class="chips">'+chip(s?PS[s]:"Parent: no answer",s==="yes")+'</div></div>';}).join("")
+      +'</div></div></div>';
+    var lo=[[1,"Has the time, place or link and what to bring"],[6,"Resume matches the posting"],[7,"Can name a skill they are growing"]];
+    h+='<div class="grp"><h3>Learner only</h3><div class="card"><div class="bd">'
+      +lo.map(function(x){var d=!!L.c[x[0]];return '<div class="row"><div class="nm">'+esc(x[1])+'</div><div class="chips">'+chip(d?"Learner: done":"Learner: open",d)+'</div></div>';}).join("")
+      +'</div></div></div>';
+
+    // 3. plan
+    var plan=get(KPLAN)||"";
+    h+='<div class="grp"><h3>3. Our plan for this week</h3>';
+    var bits=[];
+    if((L.first||"").trim()) bits.push(['Learner: the one step I will take','<p class="quote" style="margin:0">'+esc(L.first.trim())+'</p>']);
+    if((P.words||"").trim()) bits.push(['In their words: how they want the parent\'s help','<p class="quote" style="margin:0">'+esc(P.words.trim())+'</p>']);
+    if((P.wsup||"").trim()) bits.push(['Parent: one way I will support','<p class="quote" style="margin:0">'+esc(P.wsup.trim())+'</p>']);
+    if((P.wstep||"").trim()) bits.push(['Parent: one way I will step back','<p class="quote" style="margin:0">'+esc(P.wstep.trim())+'</p>']);
+    h+=bits.length?bits.map(function(b){return '<div class="card" style="margin-bottom:12px"><div class="hd"><div class="t">'+esc(b[0])+'</div></div><div class="bd">'+b[1]+'</div></div>';}).join(""):'<p class="empty">Steps from each roadmap show here once they are filled in.</p>';
+    h+='<label for="plan" style="font-family:var(--head);font-weight:500;display:block;margin:6px 0 8px">What we agreed to try together</label><textarea id="plan" placeholder="Example: Practice the 60 second answer on Thursday after dinner. I choose the questions.">'+esc(plan)+'</textarea>';
+    h+='<div class="actions noprint" style="margin-top:12px"><button class="btn ghost" id="print">Print this page</button></div></div>';
+
+    // 4. share
+    h+='<div class="grp noprint"><h3>Bring answers from another device</h3>'
+      +'<p class="small" style="margin:0 0 10px">Learner and parent on different devices? Each person copies their code and the other pastes it here. Codes hold the answers on that device and nothing else. Nothing is sent to a server.</p>'
+      +'<div class="actions"><button class="btn" id="mk">Copy my code</button><span class="small" id="mkmsg"></span></div>'
+      +'<label for="code" style="display:block;margin:14px 0 6px;font-weight:700">Paste a code from the other person</label><textarea id="code" style="min-height:70px" placeholder="GWC1:..."></textarea>'
+      +'<div class="actions" style="margin-top:10px"><button class="btn ghost" id="ld">Use this code</button>'+((get(KIL)||get(KIP))?'<button class="btn ghost" id="clr">Stop using pasted codes</button>':'')+'<span class="small" id="ldmsg"></span></div></div>';
+
+    $("#out").innerHTML=h;
+    var pl=$("#plan"); if(pl) pl.addEventListener("input",function(){set(KPLAN,pl.value);});
+    var pr=$("#print"); if(pr) pr.addEventListener("click",function(){window.print();});
+    $("#mk").addEventListener("click",makeCode);
+    $("#ld").addEventListener("click",loadCode);
+    var c=$("#clr"); if(c) c.addEventListener("click",function(){del(KIL);del(KIP);renderOut();});
+    $("#out").querySelectorAll("[data-go]").forEach(function(b){b.addEventListener("click",function(){show(b.getAttribute("data-go"));});});
+  }
+
+  function enc(o){return "GWC1:"+btoa(unescape(encodeURIComponent(JSON.stringify(o))));}
+  function dec(s){s=(s||"").trim(); if(s.indexOf("GWC1:")!==0) throw new Error("bad"); return JSON.parse(decodeURIComponent(escape(atob(s.slice(5)))));}
+  function makeCode(){
+    var o={v:1}, dl=get(KL), dp=get(KP);
+    if(dl) o.l=dl; if(dp) o.p=dp;
+    var msg=$("#mkmsg");
+    if(!o.l&&!o.p){msg.textContent="Nothing to copy yet. Fill in a roadmap first.";return;}
+    var code=enc(o);
+    function ok(){msg.textContent="Code copied. Send it to the other person.";}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(code).then(ok,function(){fallback();});} else fallback();
+    function fallback(){var t=$("#code"); t.value=code; t.select(); try{document.execCommand("copy");ok();}catch(e){msg.textContent="Copy the code from the box below.";}}
+  }
+  function loadCode(){
+    var msg=$("#ldmsg");
+    try{
+      var o=dec($("#code").value), n=0;
+      if(o.l&&o.l.a){set(KIL,o.l);n++;} if(o.p&&o.p.q){set(KIP,o.p);n++;}
+      if(!n) throw new Error("empty");
+      renderOut();
+      var m=$("#ldmsg"); if(m) m.textContent="Code loaded.";
+    }catch(e){msg.textContent="That code did not work. Copy it again in full.";}
+  }
+
+  show((location.hash||"").slice(1),false);
+})();
+</script>
+</body></html>
