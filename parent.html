@@ -449,7 +449,7 @@ html.embed #irp-app .irp-head{display:none}
   ["name","ya","strength","words","wsup","wstep"].forEach(function(k){ $("irp-"+k).value = S[k] || ""; });
   $("irp-date").value = S.date;
 
-  function readyBanner(){ return '<div class="irp-ready"><span class="acc"></span><div><strong>'+esc(Who())+' is interview ready.</strong><div>Every item is done or marked yes. Your job now is to cheer them on.</div></div></div>'; }
+  function readyBanner(){ return '<div class="irp-ready"><span class="acc"></span><div><strong>'+esc(Who())+' is ready, from application to interview.</strong><div>Every item is done or marked yes. Your job now is to cheer them on.</div></div></div>'; }
 
   function render(){
     var answered = Q.filter(function(q){ return S.q[q.id]; }).length + (S.role?1:0) + ((S.strength||"").trim()?1:0);
