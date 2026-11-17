@@ -129,12 +129,18 @@ label.fl { display: block; font-family: var(--head); font-weight: 500; margin-bo
     <div>
       <h2 class="sec-title">My roadmap</h2>
       <p class="lead">Steps from your answers and the boxes you left open on the checklist. Change an answer or check a box and your steps change. Work one step at a time.</p>
+      <p class="lead"><strong>To save the information entered, please download the results.</strong></p>
     </div>
     <div id="road" class="road"></div>
     <div id="road2" class="road" style="margin-top:-12px"></div>
     <div>
       <label class="fl" for="first">The one step I will take this week</label>
       <textarea id="first"></textarea>
+    </div>
+    <div class="card" id="savebox">
+      <h3>Download your results</h3>
+      <p style="margin:0 0 12px">To save the information entered, please download the results.</p>
+      <button class="primary" id="dl" type="button">Download my results</button>
     </div>
     <div class="row"><button class="ghost" id="edit">Change my answers or checklist</button><button class="ghost" id="reset">Start over</button></div>
   </section>
@@ -229,6 +235,14 @@ function status() {
 }
 
 $("#go").addEventListener("click", () => { $("#ask").hidden = true; $("#result").hidden = false; renderRoad(); renderRoad2(); status(); window.scrollTo(0, 0); });
+$("#dl").addEventListener("click", () => {
+  const first = ($("#first").value || "").trim();
+  const html = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="utf-8"><title>My Interview Ready Roadmap</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;color:#26303F}h1{color:#1C3557}h3{color:#00838F}li{margin-bottom:6pt}</style></head><body><h1>My Interview Ready Roadmap</h1><p>Wired to Work: Your Brain, Your Path</p>' + $("#road").innerHTML + $("#road2").innerHTML + '<h3>The one step I will take this week</h3><p>' + esc(first || "Not filled in yet") + '</p></body></html>';
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob(["\ufeff", html], { type: "application/msword" }));
+  a.download = "my-interview-ready-roadmap.doc";
+  document.body.appendChild(a); a.click(); a.remove();
+});
 $("#edit").addEventListener("click", () => { $("#result").hidden = true; $("#ask").hidden = false; window.scrollTo(0, 0); });
 $("#reset").addEventListener("click", () => {
   state = { a: {}, c: {}, first: "" }; save();
