@@ -210,6 +210,7 @@ html.embed #irp-app .irp-head{display:none}
 
     <section id="irp-s3" aria-labelledby="irp-h3" hidden>
       <h2 id="irp-h3">My support roadmap</h2>
+      <p class="irp-note"><strong>To save the information entered, please download the results.</strong></p>
       <div id="irp-ready-top"></div>
 
       <div class="irp-card"><div class="top"><div class="qlabel">Start here</div><div class="qtext" id="irp-see-h">What I see in my young adult</div></div><div class="inner" id="irp-see"></div></div>
@@ -287,7 +288,8 @@ html.embed #irp-app .irp-head{display:none}
         <button class="irp-btn ghost" type="button" id="irp-reset-no">Keep them</button>
         <button class="irp-btn dark" type="button" id="irp-reset-yes">Yes, clear</button>
       </div>
-      <p class="irp-note">Your answers save on this device. Come back after you talk and update them.</p>
+      <p class="irp-note">To save the information entered, please download the results.</p>
+      <div class="irp-actions"><button class="irp-btn" type="button" id="irp-dl">Download my results</button></div>
     </section>
   </div>
 
@@ -544,6 +546,18 @@ html.embed #irp-app .irp-head{display:none}
     $("irp-"+k).addEventListener("input", function(){ S[k] = this.value; save(); if (k==="ya"||k==="strength") render(); });
   });
 
+  $("irp-dl").addEventListener("click", function(){
+    var c = $("irp-s3").cloneNode(true), i, n;
+    n = c.querySelectorAll("textarea");
+    for (i = 0; i < n.length; i++) { var t = document.getElementById(n[i].id), q = document.createElement("p"); q.textContent = (t && t.value.trim()) || "Not filled in yet"; n[i].parentNode.replaceChild(q, n[i]); }
+    n = c.querySelectorAll("button, .irp-actions, #irp-confirm, input, svg");
+    for (i = 0; i < n.length; i++) { if (n[i].parentNode) n[i].parentNode.removeChild(n[i]); }
+    var html = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="utf-8"><title>My Interview Ready Parent Roadmap</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;color:#26303F}h1,h2{color:#1C3557}h3{color:#00838F}li{margin-bottom:6pt}</style></head><body><h1>Interview Ready Parent Roadmap</h1><p>Wired to Work: Your Brain, Your Path</p>' + c.innerHTML + '</body></html>';
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob(["\ufeff", html], { type: "application/msword" }));
+    a.download = "my-parent-roadmap.doc";
+    document.body.appendChild(a); a.click(); a.remove();
+  });
   $("irp-reset").addEventListener("click", function(){ $("irp-confirm").hidden = false; });
   $("irp-reset-no").addEventListener("click", function(){ $("irp-confirm").hidden = true; });
   $("irp-reset-yes").addEventListener("click", function(){
