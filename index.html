@@ -248,7 +248,7 @@ footer{border-top:1px solid var(--line);padding-block:14px;font-size:13px;color:
         return '<div class="row"><div><div class="nm">'+esc(it.n)+'</div>'+(note?'<div class="note">'+esc(note(it))+'</div>':'')+'</div><div class="chips">'+chip(it.l?"Learner: done":"Learner: open",it.l)+chip(pl,it.p)+'</div></div>';
       }).join("");
     }
-    h+='<div class="grp"><h3>2. Interview checklist, side by side</h3>';
+    h+='<div class="grp"><h3>2. Readiness checklist, side by side</h3>';
     var any=false;
     if(groups.diffL.length){any=true;h+='<div class="card" style="margin-bottom:12px"><div class="hd"><div class="k">Different views</div><div class="t">Learner says done. Parent has not marked it.</div></div><div class="bd">'+rows(groups.diffL,function(){return "Learner: show or tell your parent. Parent: ask, and believe the answer.";})+'</div></div>';}
     if(groups.diffP.length){any=true;h+='<div class="card" style="margin-bottom:12px"><div class="hd"><div class="k">Different views</div><div class="t">Parent says done. Learner has it open.</div></div><div class="bd">'+rows(groups.diffP,function(){return "Learner leads. Their view of what is ready counts. Ask what is left.";})+'</div></div>';}
